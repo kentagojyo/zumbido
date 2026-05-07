@@ -104,7 +104,7 @@ export default async function ArtistPage({ params }: PageProps) {
 
                 {/* Instagram */}
                 <Link 
-                  href={`https://instagram.com/${artist.instagram.replace('@', '')}`}
+                  href={artist.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8"
@@ -159,7 +159,7 @@ export default async function ArtistPage({ params }: PageProps) {
                     className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs"
                   >
                     <Link 
-                      href={`https://instagram.com/${artist.instagram.replace('@', '')}`}
+                      href={artist.instagramUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -215,10 +215,10 @@ export default async function ArtistPage({ params }: PageProps) {
 
             <div className="mt-8 text-center">
               <Link 
-                href={`https://instagram.com/${artist.instagram.replace('@', '')}`}
+                href={artist.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:underline text-sm uppercase tracking-wider"
+                className="inline-flex items-center gap-2 text-primary transition-colors hover:text-primary/80 text-sm uppercase tracking-wider"
               >
                 <Instagram className="w-4 h-4" />
                 See more on Instagram

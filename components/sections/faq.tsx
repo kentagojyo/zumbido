@@ -61,7 +61,7 @@ export function FAQSection() {
           <p className="text-foreground">
             Contact us via{' '}
             <a 
-              href="https://instagram.com/zumbido_tattoo" 
+              href="https://www.instagram.com/zumbidotattoo" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-primary hover:underline"

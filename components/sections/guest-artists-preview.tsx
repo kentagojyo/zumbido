@@ -34,39 +34,38 @@ export function GuestArtistsPreview() {
           </Button>
         </div>
 
-        {/* Upcoming Guests */}
         {upcomingGuests.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {upcomingGuests.map((guest) => (
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+            {upcomingGuests.map((guest, index) => (
               <article 
                 key={guest.id}
-                className="relative bg-background border border-border p-6 md:p-8 group hover:border-primary/50 transition-colors"
+                className="group border-y border-border/70 py-8 transition-colors hover:border-primary/45 md:py-10"
               >
-                {/* Status badge */}
-                <div className="absolute top-6 right-6">
-                  <span className="px-3 py-1 bg-primary/20 text-primary text-xs uppercase tracking-wider">
-                    Upcoming
-                  </span>
-                </div>
-
-                <div className="flex gap-6">
-                  <div className="relative w-20 h-20 md:w-24 md:h-24 bg-secondary shrink-0 overflow-hidden border border-border">
+                <div className="flex gap-6 md:gap-8">
+                  <div className="relative h-32 w-24 shrink-0 overflow-hidden bg-secondary md:h-44 md:w-32">
                     <Image
                       src={guest.profileImage}
                       alt={`${guest.name}, guest tattoo artist visiting ZUMBIDO TATTOO Tokyo`}
                       fill
-                      sizes="96px"
-                      className="object-cover gritty-image"
+                      sizes="(min-width: 768px) 128px, 96px"
+                      className={`object-cover [filter:contrast(1.06)_saturate(0.86)_brightness(0.92)] transition duration-700 group-hover:scale-105 ${
+                        index % 2 === 0 ? 'object-[50%_36%]' : 'object-[46%_44%]'
+                      }`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/55 to-transparent" />
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
-                      {guest.name}
-                    </h3>
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
+                        {guest.name}
+                      </h3>
+                      <span className="mt-1 text-[11px] uppercase tracking-[0.24em] text-primary/80">
+                        Upcoming
+                      </span>
+                    </div>
                     
-                    <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 mt-4 text-sm text-muted-foreground">
                       <MapPin className="w-4 h-4 text-primary" />
                       <span>{guest.city}, {guest.country}</span>
                     </div>
@@ -76,11 +75,11 @@ export function GuestArtistsPreview() {
                       <span>{guest.visitingDates}</span>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {guest.style.map((style) => (
+                    <div className="flex flex-wrap gap-x-3 gap-y-2 mt-5">
+                      {guest.style.slice(0, 2).map((style) => (
                         <span 
                           key={style}
-                          className="px-2 py-1 bg-secondary text-xs text-muted-foreground uppercase tracking-wider"
+                          className="text-[11px] text-muted-foreground uppercase tracking-[0.22em]"
                         >
                           {style}
                         </span>
@@ -89,11 +88,16 @@ export function GuestArtistsPreview() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between mt-6 pt-6 border-t border-border">
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/60">
+                  <Link
+                    href={guest.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                  >
                     <Instagram className="w-4 h-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">{guest.instagram}</span>
-                  </div>
+                    <span className="text-sm">{guest.instagram}</span>
+                  </Link>
                   <Link 
                     href="/guest-artists"
                     className="text-sm text-primary uppercase tracking-wider flex items-center gap-1 hover:gap-2 transition-all"
@@ -106,8 +110,7 @@ export function GuestArtistsPreview() {
           </div>
         )}
 
-        {/* CTA for guest artists */}
-        <div className="mt-16 p-8 md:p-12 bg-secondary/50 border border-border text-center">
+        <div className="mt-20 border border-border/60 bg-secondary/30 p-8 text-center md:p-12">
           <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground mb-4">
             Interested in a Guest Spot?
           </h3>

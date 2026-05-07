@@ -8,6 +8,7 @@ export interface Artist {
   shortBio: string;
   yearsExperience: number;
   instagram: string;
+  instagramUrl: string;
   profileImage: string;
   portfolioImages: string[];
   specialties: string[];
@@ -22,6 +23,7 @@ export interface GuestArtist {
   style: string[];
   visitingDates: string;
   instagram: string;
+  instagramUrl: string;
   profileImage: string;
   status: 'upcoming' | 'past';
   bio?: string;
@@ -35,14 +37,15 @@ export interface FAQ {
 export const artists: Artist[] = [
   {
     id: '1',
-    slug: 'yuki-tanaka',
-    name: 'Yuki Tanaka',
+    slug: 'megu',
+    name: 'Megu',
     title: 'Lead Artist & Founder',
     style: ['Japanese Traditional', 'Neo-Japanese', 'Blackwork'],
-    bio: 'Yuki Tanaka is the founder and lead artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. With over 15 years of experience in the tattoo industry, Yuki has developed a distinctive style that blends traditional Japanese aesthetics with contemporary techniques. His work is known for bold compositions, precise linework, and a deep respect for the heritage of Japanese tattooing. Based in the heart of Tokyo, Yuki welcomes both local and international clients seeking authentic Japanese tattoo artistry.',
+    bio: 'Megu is the founder and lead artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. With over 15 years of experience in the tattoo industry, Megu has developed a distinctive style that blends traditional Japanese aesthetics with contemporary techniques. The work is known for bold compositions, precise linework, and a deep respect for the heritage of Japanese tattooing. Based in the heart of Tokyo, Megu welcomes both local and international clients seeking authentic Japanese tattoo artistry.',
     shortBio: 'Founder of ZUMBIDO TATTOO. Master of Japanese traditional and neo-Japanese styles with 15+ years in Tokyo.',
     yearsExperience: 15,
-    instagram: '@yuki_zumbido',
+    instagram: '@megumu_weirdo',
+    instagramUrl: 'https://www.instagram.com/megumu_weirdo/',
     profileImage: '/images/artist-megumu.png',
     portfolioImages: [
       '/images/work-blackwork-01.jpg',
@@ -53,15 +56,16 @@ export const artists: Artist[] = [
   },
   {
     id: '2',
-    slug: 'mika-sato',
-    name: 'Mika Sato',
+    slug: 'yasu',
+    name: 'Yasu',
     title: 'Senior Artist',
     style: ['Blackwork', 'Geometric', 'Ornamental'],
-    bio: 'Mika Sato brings a unique perspective to ZUMBIDO TATTOO in Nakameguro, Tokyo, specializing in blackwork and geometric designs. Her architectural background influences her precise, mathematically-inspired compositions. With 8 years of tattooing experience in Tokyo, Mika has built a reputation for intricate mandala work and ornamental pieces that push the boundaries of contemporary tattooing.',
+    bio: 'Yasu brings a precise, architectural perspective to ZUMBIDO TATTOO in Nakameguro, Tokyo, specializing in blackwork and geometric designs. With 8 years of tattooing experience in Tokyo, Yasu has built a reputation for intricate ornamental pieces that push the boundaries of contemporary tattooing.',
     shortBio: 'Blackwork specialist with an architectural eye. Creating geometric masterpieces in Tokyo for 8 years.',
     yearsExperience: 8,
-    instagram: '@mika_blackink',
-    profileImage: '/images/artist-megumu.png',
+    instagram: '@yapetas',
+    instagramUrl: 'https://www.instagram.com/yapetas/',
+    profileImage: '/images/artists/mika.jpg',
     portfolioImages: [
       '/images/work-lettering-01.jpg',
       '/images/work-blackwork-01.jpg',
@@ -71,15 +75,16 @@ export const artists: Artist[] = [
   },
   {
     id: '3',
-    slug: 'ryu-nakamura',
-    name: 'Ryu Nakamura',
+    slug: 'gentaro',
+    name: 'Gentaro',
     title: 'Artist',
     style: ['Realism', 'Dark Art', 'Horror'],
-    bio: 'Ryu Nakamura is a master of dark realism at ZUMBIDO TATTOO in Nakameguro, Tokyo. His work explores the macabre and supernatural, drawing inspiration from horror cinema, gothic literature, and the darker corners of human imagination. With 10 years of experience, Ryu has become a sought-after artist for clients wanting bold, dramatic pieces with incredible depth and detail.',
+    bio: 'Gentaro is a master of dark realism at ZUMBIDO TATTOO in Nakameguro, Tokyo. His work explores dramatic contrast, atmosphere, and depth for clients wanting bold pieces with a cinematic presence.',
     shortBio: 'Dark realism specialist. 10 years creating horror-inspired masterpieces in Tokyo.',
     yearsExperience: 10,
-    instagram: '@ryu_darkart',
-    profileImage: '/images/artist-megumu.png',
+    instagram: '@gentaro_tattoo',
+    instagramUrl: 'https://www.instagram.com/gentaro_tattoo/',
+    profileImage: '/images/artists/ryu.jpg',
     portfolioImages: [
       '/images/work-blackwork-01.jpg',
       '/images/work-lettering-01.jpg',
@@ -89,15 +94,16 @@ export const artists: Artist[] = [
   },
   {
     id: '4',
-    slug: 'hana-kim',
-    name: 'Hana Kim',
+    slug: 'josh',
+    name: 'Josh',
     title: 'Artist',
     style: ['Fine Line', 'Illustrative', 'Botanical'],
-    bio: 'Hana Kim brings delicate precision to ZUMBIDO TATTOO in Nakameguro, Tokyo. Specializing in fine line work and botanical illustrations, her tattoos capture the ephemeral beauty of nature with stunning detail. Originally from Seoul and now based in Tokyo, Hana has spent 6 years refining her craft, creating pieces that feel both timeless and contemporary.',
+    bio: 'Josh brings delicate precision to ZUMBIDO TATTOO in Nakameguro, Tokyo. Specializing in fine line work and illustration, his tattoos balance detail, restraint, and contemporary composition.',
     shortBio: 'Fine line artist from Seoul, now creating botanical art in Tokyo for 6 years.',
     yearsExperience: 6,
-    instagram: '@hana_fineline',
-    profileImage: '/images/artist-megumu.png',
+    instagram: '@joshualeetattoo',
+    instagramUrl: 'https://www.instagram.com/joshualeetattoo/',
+    profileImage: '/images/artists/hana.jpg',
     portfolioImages: [
       '/images/work-lettering-01.jpg',
       '/images/work-blackwork-01.jpg',
@@ -105,68 +111,78 @@ export const artists: Artist[] = [
     specialties: ['Florals', 'Fine Line', 'Micro Tattoos', 'Botanical', 'Illustrative'],
     isResident: true,
   },
+  {
+    id: '5',
+    slug: 'kotaro',
+    name: 'Kotaro',
+    title: 'Artist',
+    style: ['Blackwork', 'Lettering', 'Graphic'],
+    bio: 'Kotaro works with bold blackwork, graphic rhythm, and lettering at ZUMBIDO TATTOO in Nakameguro, Tokyo. His pieces are direct, sharp, and built around strong visual impact.',
+    shortBio: 'Graphic blackwork and lettering artist creating sharp, high-impact Tokyo tattoos.',
+    yearsExperience: 7,
+    instagram: '@kotaro_zido',
+    instagramUrl: 'https://www.instagram.com/kotaro_zido/',
+    profileImage: '/images/artists/yuki.jpg',
+    portfolioImages: [
+      '/images/work-lettering-01.jpg',
+      '/images/work-blackwork-01.jpg',
+    ],
+    specialties: ['Lettering', 'Blackwork', 'Graphic Pieces', 'Flash', 'Custom Work'],
+    isResident: true,
+  },
+  {
+    id: '6',
+    slug: 'echo',
+    name: 'Echo',
+    title: 'Artist',
+    style: ['Fine Line', 'Ornamental', 'Minimalist'],
+    bio: 'Echo creates refined fine line and ornamental tattoos at ZUMBIDO TATTOO in Nakameguro, Tokyo, with a focus on clean placement, quiet detail, and lasting balance.',
+    shortBio: 'Fine line and ornamental artist focused on quiet detail and clean placement.',
+    yearsExperience: 6,
+    instagram: '@echo_tatt',
+    instagramUrl: 'https://www.instagram.com/echo_tatt/',
+    profileImage: '/images/artists/mika.jpg',
+    portfolioImages: [
+      '/images/portfolio/hana-1.jpg',
+      '/images/portfolio/hana-2.jpg',
+    ],
+    specialties: ['Fine Line', 'Ornamental', 'Minimalist', 'Small Pieces', 'Botanical'],
+    isResident: true,
+  },
+  {
+    id: '7',
+    slug: 'morgan',
+    name: 'Morgan',
+    title: 'Artist',
+    style: ['Illustrative', 'Blackwork', 'Dark Art'],
+    bio: 'Morgan brings illustrative blackwork and dark art sensibility to ZUMBIDO TATTOO in Nakameguro, Tokyo, shaping tattoos with atmosphere, texture, and editorial restraint.',
+    shortBio: 'Illustrative blackwork artist shaping atmospheric tattoos with dark editorial restraint.',
+    yearsExperience: 5,
+    instagram: '@morgantat2',
+    instagramUrl: 'https://www.instagram.com/morgantat2/',
+    profileImage: '/images/artists/ryu.jpg',
+    portfolioImages: [
+      '/images/work-blackwork-01.jpg',
+      '/images/portfolio/hana-3.jpg',
+    ],
+    specialties: ['Illustrative', 'Blackwork', 'Dark Art', 'Texture', 'Custom Pieces'],
+    isResident: true,
+  },
 ];
 
 export const guestArtists: GuestArtist[] = [
   {
     id: 'g1',
-    name: 'Marcus Black',
-    city: 'London',
-    country: 'UK',
-    style: ['Traditional', 'Neo-Traditional', 'Bold'],
-    visitingDates: 'June 15-30, 2025',
-    instagram: '@marcusblack_tattoo',
-    profileImage: '/images/guest-artist-01.jpg',
+    name: 'Tomas Tomas',
+    city: 'International',
+    country: 'Guest Artist',
+    style: ['Blackwork', 'Illustrative', 'Guest Work'],
+    visitingDates: 'Limited guest spot',
+    instagram: '@tomastomas108',
+    instagramUrl: 'https://www.instagram.com/tomastomas108/',
+    profileImage: '/images/guests/marcus.jpg',
     status: 'upcoming',
-    bio: 'London-based traditional tattoo master bringing classic Western style to Tokyo.',
-  },
-  {
-    id: 'g2',
-    name: 'Elena Voss',
-    city: 'Berlin',
-    country: 'Germany',
-    style: ['Abstract', 'Watercolor', 'Avant-garde'],
-    visitingDates: 'July 1-15, 2025',
-    instagram: '@elenavoss_art',
-    profileImage: '/images/guest-artist-01.jpg',
-    status: 'upcoming',
-    bio: 'Berlin avant-garde artist known for pushing boundaries with abstract compositions.',
-  },
-  {
-    id: 'g3',
-    name: 'Jake Morrison',
-    city: 'Los Angeles',
-    country: 'USA',
-    style: ['Chicano', 'Script', 'Portrait'],
-    visitingDates: 'March 1-14, 2025',
-    instagram: '@jakemorrison_ink',
-    profileImage: '/images/guest-artist-01.jpg',
-    status: 'past',
-    bio: 'LA legend specializing in Chicano style and script work.',
-  },
-  {
-    id: 'g4',
-    name: 'Sofia Chen',
-    city: 'Taipei',
-    country: 'Taiwan',
-    style: ['Watercolor', 'Illustrative', 'Kawaii'],
-    visitingDates: 'February 10-25, 2025',
-    instagram: '@sofiachen_tattoo',
-    profileImage: '/images/guest-artist-01.jpg',
-    status: 'past',
-    bio: 'Taiwanese artist blending cute aesthetics with sophisticated illustration.',
-  },
-  {
-    id: 'g5',
-    name: 'Viktor Morozov',
-    city: 'Moscow',
-    country: 'Russia',
-    style: ['Realism', 'Black and Grey', 'Portrait'],
-    visitingDates: 'January 5-20, 2025',
-    instagram: '@viktormorozov_art',
-    profileImage: '/images/guest-artist-01.jpg',
-    status: 'past',
-    bio: 'Russian realism master specializing in hyper-realistic portraits.',
+    bio: 'Guest artist visiting ZUMBIDO TATTOO for a limited residency in Nakameguro, Tokyo.',
   },
 ];
 
@@ -208,6 +224,9 @@ export const faqs: FAQ[] = [
 export const portfolioImages = [
   { id: 'p1', src: '/images/work-blackwork-01.jpg', artist: 'ZUMBIDO TATTOO', style: 'Blackwork' },
   { id: 'p2', src: '/images/work-lettering-01.jpg', artist: 'ZUMBIDO TATTOO', style: 'Lettering' },
+  { id: 'p3', src: '/images/portfolio/hana-1.jpg', artist: 'Hana Kim', style: 'Fine Line' },
+  { id: 'p4', src: '/images/portfolio/hana-2.jpg', artist: 'Hana Kim', style: 'Botanical' },
+  { id: 'p5', src: '/images/portfolio/hana-3.jpg', artist: 'Hana Kim', style: 'Fine Line' },
 ];
 
 export const studioInfo = {
@@ -217,7 +236,8 @@ export const studioInfo = {
   address: '1-2-3 Nakameguro, Meguro-ku, Tokyo 153-0061, Japan',
   phone: '+81-3-XXXX-XXXX',
   email: 'info@zumbidotattoo.com',
-  instagram: '@zumbido_tattoo',
+  instagram: '@zumbidotattoo',
+  instagramUrl: 'https://www.instagram.com/zumbidotattoo',
   hours: {
     weekdays: '12:00 PM - 9:00 PM',
     saturday: '11:00 AM - 8:00 PM',

@@ -4,10 +4,12 @@ import { Instagram, ArrowRight } from 'lucide-react'
 import { artists } from '@/lib/data'
 
 export function ArtistsSection() {
+  const cropPositions = ['object-[52%_38%]', 'object-[42%_48%]', 'object-[58%_42%]', 'object-[48%_36%]']
+
   return (
-    <section id="artists" className="py-24 md:py-32">
+    <section id="artists" className="py-24 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 md:mb-20">
           <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4 block">
             Our Collective
           </span>
@@ -20,32 +22,43 @@ export function ArtistsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {artists.filter(a => a.isResident).map((artist) => (
-            <Link
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10">
+          {artists.filter(a => a.isResident).map((artist, index) => (
+            <article
               key={artist.id}
-              href={`/artists/${artist.slug}`}
-              className="group block"
+              className={`group block ${index % 2 === 1 ? 'md:translate-y-10' : ''}`}
             >
-              <article className="grid min-h-full grid-cols-1 overflow-hidden border border-border bg-card transition duration-500 hover:border-primary/50 sm:grid-cols-[0.9fr_1.1fr]">
-                <div className="relative min-h-[340px] overflow-hidden bg-secondary sm:min-h-full">
+              <div
+                className={`grid min-h-full grid-cols-1 overflow-hidden border border-border/70 bg-card/70 transition duration-500 hover:border-primary/45 hover:bg-card sm:grid-cols-[1.08fr_0.92fr] ${
+                  index % 2 === 1 ? 'sm:grid-cols-[0.92fr_1.08fr]' : ''
+                }`}
+              >
+                <div className={`relative min-h-[360px] overflow-hidden bg-secondary sm:min-h-full ${index % 2 === 1 ? 'sm:order-2' : ''}`}>
                   <Image
                     src={artist.profileImage}
                     alt={`${artist.name}, resident tattoo artist at ZUMBIDO TATTOO in Nakameguro, Tokyo`}
                     fill
                     sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover gritty-image transition duration-700 group-hover:scale-105"
+                    className={`object-cover ${cropPositions[index % cropPositions.length]} [filter:contrast(1.06)_saturate(0.86)_brightness(0.9)] transition duration-700 group-hover:scale-105 group-hover:[filter:contrast(1.08)_saturate(0.9)_brightness(0.96)]`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-xs uppercase tracking-[0.22em] text-primary">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/92 via-background/12 to-transparent" />
+                  <div className="absolute left-5 top-5 font-serif text-5xl text-foreground/10">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <Link
+                      href={artist.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex text-xs uppercase tracking-[0.22em] text-primary/90 transition-colors hover:text-primary"
+                    >
                       {artist.instagram}
-                    </p>
+                    </Link>
                   </div>
                 </div>
 
-                <div className="flex flex-col p-6 md:p-7">
-                  <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col p-7 md:p-8">
+                  <div className="flex items-start justify-between gap-5">
                     <div>
                       <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
                         {artist.name}
@@ -54,20 +67,20 @@ export function ArtistsSection() {
                         {artist.title}
                       </p>
                     </div>
-                    <span className="text-xs text-primary/80 uppercase tracking-wider shrink-0">
+                    <span className="shrink-0 border-l border-primary/30 pl-3 text-xs text-primary/75 uppercase tracking-wider">
                       {artist.yearsExperience}+ yrs
                     </span>
                   </div>
 
-                  <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-6 text-sm leading-7 text-muted-foreground">
                     {artist.shortBio}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {artist.style.slice(0, 3).map((style) => (
+                  <div className="flex flex-wrap gap-x-3 gap-y-2 mt-7">
+                    {artist.style.slice(0, 2).map((style) => (
                       <span
                         key={style}
-                        className="px-2.5 py-1 bg-secondary text-xs text-muted-foreground uppercase tracking-wider"
+                        className="text-[11px] text-muted-foreground uppercase tracking-[0.22em]"
                       >
                         {style}
                       </span>
@@ -75,19 +88,27 @@ export function ArtistsSection() {
                   </div>
 
                   <div className="mt-auto pt-6">
-                    <div className="border-t border-border pt-5 flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="border-t border-border/70 pt-5 flex items-center justify-between gap-4">
+                      <Link
+                        href={artist.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+                      >
                         <Instagram className="w-4 h-4 text-primary" />
                         <span>Personal consultations</span>
-                      </div>
-                      <span className="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-wider transition-all group-hover:gap-3">
+                      </Link>
+                      <Link
+                        href={`/artists/${artist.slug}`}
+                        className="inline-flex items-center gap-2 text-primary text-xs uppercase tracking-wider transition-all hover:gap-3"
+                      >
                         Profile <ArrowRight className="w-4 h-4" />
-                      </span>
+                      </Link>
                     </div>
                   </div>
                 </div>
-              </article>
-            </Link>
+              </div>
+            </article>
           ))}
         </div>
       </div>

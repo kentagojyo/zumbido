@@ -35,7 +35,7 @@ export function Header() {
               width={1536}
               height={1024}
               sizes="(min-width: 768px) 168px, 126px"
-              className="h-[126px] w-auto max-w-none object-contain object-left drop-shadow-[0_0_18px_rgba(190,18,60,0.42)] md:h-[168px]"
+              className="h-[126px] w-auto max-w-none object-contain object-left opacity-90 drop-shadow-[0_0_12px_rgba(190,18,60,0.28)] md:h-[168px]"
               priority
             />
           </Link>
@@ -56,7 +56,7 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="https://instagram.com/zumbido_tattoo"
+              href="https://www.instagram.com/zumbidotattoo"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -103,13 +103,13 @@ export function Header() {
                 </nav>
                 <div className="mt-auto pt-8 flex flex-col gap-4">
                   <Link
-                    href="https://instagram.com/zumbido_tattoo"
+                    href="https://www.instagram.com/zumbidotattoo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Instagram className="h-5 w-5" />
-                    <span>@zumbido_tattoo</span>
+                    <span>@zumbidotattoo</span>
                   </Link>
                   <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider">
                     <Link href="/#booking" onClick={() => setIsOpen(false)}>

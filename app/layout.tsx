@@ -97,7 +97,7 @@ export default function RootLayout({
               priceRange: '¥¥¥',
               image: 'https://zumbidotattoo.com/images/hero-01.jpg',
               url: 'https://zumbidotattoo.com',
-              sameAs: ['https://instagram.com/zumbido_tattoo'],
+              sameAs: ['https://www.instagram.com/zumbidotattoo'],
               acceptsReservations: true,
               paymentAccepted: 'Cash, Credit Card, PayPay, LINE Pay',
               currenciesAccepted: 'JPY',

@@ -113,7 +113,7 @@ export function BookingSection() {
               className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs w-full md:w-auto"
             >
               <Link 
-                href="https://instagram.com/zumbido_tattoo" 
+                href={studioInfo.instagramUrl}
                 target="_blank" 
                 rel="noopener noreferrer"
               >

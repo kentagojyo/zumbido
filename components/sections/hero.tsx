@@ -19,7 +19,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-background/88 via-background/28 to-background/72" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       <div
-        className="absolute inset-0 opacity-[0.08]"
+        className="absolute inset-0 opacity-[0.055]"
         style={{
           backgroundImage: `
             linear-gradient(to right, oklch(0.5 0.2 25) 1px, transparent 1px),
@@ -44,7 +44,7 @@ export function HeroSection() {
         </div>
 
         <h1 className="sr-only">ZUMBIDO TATTOO</h1>
-        <div className="relative mx-auto mb-7 h-40 w-28 sm:h-52 sm:w-36 md:h-60 md:w-44 lg:h-64 lg:w-48">
+        <div className="relative mx-auto mb-10 h-40 w-28 -translate-y-3 sm:h-52 sm:w-36 md:h-60 md:w-44 lg:h-64 lg:w-48">
           <Image
             src="/images/zumbido-logo-real.png"
             alt="ZUMBIDO TATTOO"
@@ -62,10 +62,10 @@ export function HeroSection() {
           <span className="h-px w-12 bg-primary/60" />
         </div>
 
-        <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 mb-4 tracking-wide">
+        <p className="mb-6 text-lg tracking-wide text-foreground/95 drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)] sm:text-xl md:text-2xl">
           Underground Tattoo Studio in Nakameguro, Tokyo
         </p>
-        <p className="text-sm sm:text-base text-primary/90 uppercase tracking-[0.2em] mb-12">
+        <p className="mb-12 text-sm uppercase tracking-[0.2em] text-primary/90 sm:text-base">
           Bold lines. Dark culture. Tokyo ink.
         </p>
 

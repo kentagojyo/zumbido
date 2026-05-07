@@ -109,7 +109,7 @@ export default function GuestArtistsPage() {
                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
                             <Instagram className="w-4 h-4 text-primary shrink-0" />
                             <Link 
-                              href={`https://instagram.com/${guest.instagram.replace('@', '')}`}
+                              href={guest.instagramUrl}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="hover:text-primary transition-colors"
@@ -141,7 +141,7 @@ export default function GuestArtistsPage() {
                           className="mt-6 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs w-full sm:w-auto"
                         >
                           <Link 
-                            href={`https://instagram.com/${guest.instagram.replace('@', '')}`}
+                            href={guest.instagramUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -164,12 +164,12 @@ export default function GuestArtistsPage() {
                   className="mt-4 border-border hover:bg-secondary uppercase tracking-wider text-xs"
                 >
                   <Link 
-                    href="https://instagram.com/zumbido_tattoo"
+                    href="https://www.instagram.com/zumbidotattoo"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Instagram className="w-4 h-4 mr-2" />
-                    Follow @zumbido_tattoo
+                    Follow @zumbidotattoo
                   </Link>
                 </Button>
               </div>
@@ -264,7 +264,7 @@ export default function GuestArtistsPage() {
                 className="border-border hover:bg-secondary uppercase tracking-wider text-xs"
               >
                 <Link 
-                  href="https://instagram.com/zumbido_tattoo"
+                  href="https://www.instagram.com/zumbidotattoo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

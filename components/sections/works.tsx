@@ -7,13 +7,14 @@ import { Instagram, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { portfolioImages } from '@/lib/data'
 
-const filters = ['All', 'Blackwork', 'Lettering']
+const filters = ['All', 'Blackwork', 'Lettering', 'Fine Line']
 
 export function WorksSection() {
   const [activeFilter, setActiveFilter] = useState('All')
   const filteredImages = activeFilter === 'All'
     ? portfolioImages
     : portfolioImages.filter((image) => image.style === activeFilter)
+  const cropPositions = ['object-[50%_48%]', 'object-[48%_46%]', 'object-[50%_55%]', 'object-[52%_52%]', 'object-[50%_50%]']
 
   return (
     <section id="works" className="py-24 md:py-32 overflow-hidden">
@@ -51,23 +52,23 @@ export function WorksSection() {
           ))}
         </div>
 
-        <div className="grid auto-rows-[220px] grid-cols-1 gap-3 sm:grid-cols-2 md:auto-rows-[260px] lg:grid-cols-4 lg:auto-rows-[220px]">
+        <div className="grid auto-rows-[240px] grid-cols-1 gap-3 sm:grid-cols-2 md:auto-rows-[280px] lg:grid-cols-4 lg:auto-rows-[230px]">
           {filteredImages.map((image, index) => (
             <article
               key={image.id}
-              className={`group relative overflow-hidden border border-border bg-secondary ${
+              className={`group relative overflow-hidden bg-secondary ${
                 index === 0 ? 'sm:col-span-2 lg:row-span-2' : ''
-              } ${index === 2 ? 'lg:col-span-2' : ''}`}
+              } ${index === 2 ? 'lg:col-span-2' : ''} ${index === 4 ? 'lg:col-span-2' : ''}`}
             >
               <Image
                 src={image.src}
                 alt={`${image.style} tattoo by ${image.artist} at ZUMBIDO TATTOO in Nakameguro, Tokyo`}
                 fill
                 sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover gritty-image transition duration-700 group-hover:scale-105"
+                className={`object-cover ${cropPositions[index % cropPositions.length]} [filter:contrast(1.02)_saturate(0.82)_brightness(0.88)] transition duration-700 group-hover:scale-105 group-hover:[filter:contrast(1.04)_saturate(0.86)_brightness(0.94)]`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/92 via-background/20 to-transparent" />
-              <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-primary/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/88 via-background/16 to-transparent" />
+              <div className="absolute inset-0 bg-primary/[0.08] opacity-0 transition duration-500 group-hover:opacity-100" />
               <div className="absolute left-4 right-4 bottom-4 flex items-end justify-between gap-4">
                 <div>
                   <p className="text-sm font-medium text-foreground">
@@ -95,12 +96,12 @@ export function WorksSection() {
             className="border-border hover:bg-secondary uppercase tracking-wider text-xs"
           >
             <Link
-              href="https://instagram.com/zumbido_tattoo"
+              href="https://www.instagram.com/zumbidotattoo"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Instagram className="w-4 h-4 mr-2" />
-              @zumbido_tattoo
+              @zumbidotattoo
               <ExternalLink className="w-3 h-3 ml-2" />
             </Link>
           </Button>

@@ -25,7 +25,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4 mt-6">
               <Link
-                href={`https://instagram.com/${studioInfo.instagram.replace('@', '')}`}
+                href={studioInfo.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-secondary rounded flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"

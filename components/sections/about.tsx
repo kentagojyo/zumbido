@@ -4,7 +4,7 @@ export function AboutSection() {
   return (
     <section id="about" className="py-24 md:py-32 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center">
           <div className="relative">
             <div className="relative aspect-[4/5] bg-secondary overflow-hidden border border-border">
               <Image
@@ -45,7 +45,7 @@ export function AboutSection() {
               Where Art Meets
               <span className="text-primary block">Skin</span>
             </h2>
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <div className="max-w-xl space-y-7 text-muted-foreground leading-8">
               <p>
                 ZUMBIDO TATTOO is an underground tattoo studio located in the artistic
                 neighborhood of Nakameguro, Tokyo. Founded in 2010, we have built a
@@ -54,18 +54,13 @@ export function AboutSection() {
               </p>
               <p>
                 Our collective of artists brings diverse backgrounds and specializations from
-                Japanese traditional and neo-Japanese to blackwork, geometric, realism, and
-                fine line. What unites us is a commitment to craftsmanship, a passion for dark
-                aesthetics, and a dedication to creating meaningful, lasting art.
-              </p>
-              <p>
-                We welcome clients from around the world. Whether you&apos;re a Tokyo local or a
-                visitor seeking authentic Japanese tattoo artistry, our English-speaking team
-                is ready to bring your vision to life.
+                Japanese traditional and neo-Japanese to blackwork, realism, and fine line.
+                We welcome Tokyo locals and international clients with an English-speaking
+                team ready to shape meaningful, lasting work.
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 sm:gap-8 mt-12 pt-8 border-t border-border">
+            <div className="grid grid-cols-3 gap-6 sm:gap-8 mt-14 pt-9 border-t border-border">
               <div>
                 <span className="text-3xl md:text-4xl font-serif font-bold text-primary">15+</span>
                 <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-1">

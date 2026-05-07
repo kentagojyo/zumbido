@@ -21,22 +21,19 @@ export function LocationSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Map Placeholder */}
-          <div className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] bg-secondary border border-border overflow-hidden">
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <MapPin className="w-12 h-12 text-primary/30 mb-4" />
-              <span className="text-sm text-muted-foreground/50 uppercase tracking-wider">
-                Google Map
-              </span>
-              <span className="text-xs text-muted-foreground/30 mt-2">
-                Nakameguro, Tokyo
-              </span>
-            </div>
-            {/* Map overlay effect */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-w-0">
+          {/* Map */}
+          <div className="relative min-h-[360px] w-full max-w-full min-w-0 overflow-hidden border border-border bg-secondary sm:min-h-[420px] lg:h-full">
+            <iframe
+              src={studioInfo.mapEmbedUrl}
+              title="Google Map showing Nakameguro, Tokyo near ZUMBIDO TATTOO"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="block h-full min-h-[360px] w-full max-w-full border-0 grayscale invert-[0.9] contrast-125 sm:min-h-[420px]"
+              allowFullScreen
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none" />
             
-            {/* Open in maps button */}
             <div className="absolute bottom-6 left-6 right-6">
               <Button 
                 asChild 
@@ -57,7 +54,7 @@ export function LocationSection() {
           </div>
 
           {/* Info */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center min-w-0">
             {/* Address */}
             <div className="mb-8 pb-8 border-b border-border">
               <div className="flex items-start gap-4">

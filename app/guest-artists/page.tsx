@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Instagram, ArrowLeft, MapPin, Calendar, Mail } from 'lucide-react'
 import { Header } from '@/components/header'
@@ -72,11 +73,15 @@ export default function GuestArtistsPage() {
                     className="bg-card border border-border hover:border-primary/30 transition-colors overflow-hidden"
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-3">
-                      {/* Image placeholder */}
-                      <div className="aspect-square sm:aspect-auto bg-secondary flex items-center justify-center">
-                        <span className="text-6xl font-serif font-bold text-primary/20">
-                          {guest.name.charAt(0)}
-                        </span>
+                      <div className="relative aspect-square sm:aspect-auto bg-secondary overflow-hidden">
+                        <Image
+                          src={guest.profileImage}
+                          alt={`${guest.name}, international tattoo guest artist visiting Nakameguro, Tokyo`}
+                          fill
+                          sizes="(min-width: 640px) 220px, 100vw"
+                          className="object-cover gritty-image"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
                       </div>
 
                       {/* Content */}
@@ -191,10 +196,14 @@ export default function GuestArtistsPage() {
                   className="bg-background border border-border p-6 opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 bg-secondary shrink-0 flex items-center justify-center">
-                      <span className="text-xl font-serif font-bold text-primary/30">
-                        {guest.name.charAt(0)}
-                      </span>
+                    <div className="relative w-16 h-16 bg-secondary shrink-0 overflow-hidden border border-border">
+                      <Image
+                        src={guest.profileImage}
+                        alt={`${guest.name}, past guest tattoo artist at ZUMBIDO TATTOO Tokyo`}
+                        fill
+                        sizes="64px"
+                        className="object-cover gritty-image"
+                      />
                     </div>
                     <div>
                       <h3 className="font-serif font-bold text-foreground">

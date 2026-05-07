@@ -1,30 +1,42 @@
+import Image from 'next/image'
+
 export function AboutSection() {
   return (
     <section id="about" className="py-24 md:py-32 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image placeholder */}
-          <div className="relative aspect-[4/5] bg-secondary overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <svg 
-                  className="w-16 h-16 text-primary/30 mx-auto mb-4" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M11 2h2v8h8v2h-8v8h-2v-8H3v-2h8z" />
-                </svg>
-                <span className="text-sm text-muted-foreground/50 uppercase tracking-wider">
-                  Studio Image
-                </span>
+          <div className="relative">
+            <div className="relative aspect-[4/5] bg-secondary overflow-hidden border border-border">
+              <Image
+                src="/images/about-1.jpg"
+                alt="Inside ZUMBIDO TATTOO, an English-friendly tattoo studio in Nakameguro, Tokyo"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover gritty-image"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+              <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-primary/50" />
+              <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-primary/50" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-xs uppercase tracking-[0.24em] text-primary">
+                  Nakameguro Tattoo / Tokyo Tattoo Studio
+                </p>
               </div>
             </div>
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-primary/30" />
-            <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-primary/30" />
+            <div className="absolute -right-4 -bottom-6 hidden w-44 overflow-hidden border border-border bg-background shadow-2xl md:block lg:-right-8">
+              <div className="relative aspect-square">
+                <Image
+                  src="/images/about-2.jpg"
+                  alt="Tattoo studio detail at ZUMBIDO TATTOO Tokyo"
+                  fill
+                  sizes="176px"
+                  className="object-cover gritty-image"
+                />
+                <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+              </div>
+            </div>
           </div>
 
-          {/* Content */}
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4 block">
               About Us
@@ -35,26 +47,25 @@ export function AboutSection() {
             </h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                ZUMBIDO TATTOO is an underground tattoo studio located in the artistic 
-                neighborhood of Nakameguro, Tokyo. Founded in 2010, we have built a 
-                reputation for bold, uncompromising tattoo art that pushes creative 
+                ZUMBIDO TATTOO is an underground tattoo studio located in the artistic
+                neighborhood of Nakameguro, Tokyo. Founded in 2010, we have built a
+                reputation for bold, uncompromising tattoo art that pushes creative
                 boundaries while honoring traditional techniques.
               </p>
               <p>
-                Our collective of artists brings diverse backgrounds and specializations—from 
-                Japanese traditional and neo-Japanese to blackwork, geometric, realism, and 
-                fine line. What unites us is a commitment to craftsmanship, a passion for dark 
+                Our collective of artists brings diverse backgrounds and specializations from
+                Japanese traditional and neo-Japanese to blackwork, geometric, realism, and
+                fine line. What unites us is a commitment to craftsmanship, a passion for dark
                 aesthetics, and a dedication to creating meaningful, lasting art.
               </p>
               <p>
-                We welcome clients from around the world. Whether you&apos;re a Tokyo local or a 
-                visitor seeking authentic Japanese tattoo artistry, our English-speaking team 
+                We welcome clients from around the world. Whether you&apos;re a Tokyo local or a
+                visitor seeking authentic Japanese tattoo artistry, our English-speaking team
                 is ready to bring your vision to life.
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-border">
+            <div className="grid grid-cols-3 gap-6 sm:gap-8 mt-12 pt-8 border-t border-border">
               <div>
                 <span className="text-3xl md:text-4xl font-serif font-bold text-primary">15+</span>
                 <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-1">

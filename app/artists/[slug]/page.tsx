@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import Image from 'next/image'
 import { Instagram, ArrowLeft, ArrowRight, Calendar, MessageCircle } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
@@ -72,13 +73,16 @@ export default async function ArtistPage({ params }: PageProps) {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
               {/* Artist Image */}
-              <div className="relative aspect-[3/4] bg-secondary overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-8xl font-serif font-bold text-primary/10">
-                    {artist.name.charAt(0)}
-                  </span>
-                </div>
-                {/* Corner accents */}
+              <div className="relative aspect-[3/4] bg-secondary overflow-hidden border border-border">
+                <Image
+                  src={artist.profileImage}
+                  alt={`${artist.name}, tattoo artist at ZUMBIDO TATTOO in Nakameguro, Tokyo`}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover gritty-image"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-primary/30" />
                 <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-primary/30" />
               </div>
@@ -196,11 +200,14 @@ export default async function ArtistPage({ params }: PageProps) {
                   key={index}
                   className="relative aspect-square bg-secondary group cursor-pointer overflow-hidden"
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-4xl font-serif font-bold text-primary/10">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                  </div>
+                  <Image
+                    src={image}
+                    alt={`Recent tattoo work by ${artist.name} at ZUMBIDO TATTOO Tokyo`}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 50vw"
+                    className="object-cover gritty-image transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               ))}
@@ -241,10 +248,15 @@ export default async function ArtistPage({ params }: PageProps) {
                     className="group"
                   >
                     <article className="bg-card border border-border hover:border-primary/30 transition-colors p-6">
-                      <div className="aspect-square bg-secondary mb-4 flex items-center justify-center">
-                        <span className="text-4xl font-serif font-bold text-primary/20">
-                          {relatedArtist.name.charAt(0)}
-                        </span>
+                      <div className="relative aspect-square bg-secondary mb-4 overflow-hidden">
+                        <Image
+                          src={relatedArtist.profileImage}
+                          alt={`${relatedArtist.name}, tattoo artist at ZUMBIDO TATTOO Tokyo`}
+                          fill
+                          sizes="(min-width: 768px) 33vw, 100vw"
+                          className="object-cover gritty-image transition duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
                       </div>
                       <h3 className="text-lg font-serif font-bold text-foreground group-hover:text-primary transition-colors">
                         {relatedArtist.name}

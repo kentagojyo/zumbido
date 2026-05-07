@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Instagram, ArrowRight, MapPin, Calendar } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -49,11 +50,15 @@ export function GuestArtistsPreview() {
                 </div>
 
                 <div className="flex gap-6">
-                  {/* Avatar placeholder */}
-                  <div className="w-20 h-20 md:w-24 md:h-24 bg-secondary shrink-0 flex items-center justify-center">
-                    <span className="text-2xl font-serif font-bold text-primary/30">
-                      {guest.name.charAt(0)}
-                    </span>
+                  <div className="relative w-20 h-20 md:w-24 md:h-24 bg-secondary shrink-0 overflow-hidden border border-border">
+                    <Image
+                      src={guest.profileImage}
+                      alt={`${guest.name}, guest tattoo artist visiting ZUMBIDO TATTOO Tokyo`}
+                      fill
+                      sizes="96px"
+                      className="object-cover gritty-image"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                   </div>
 
                   <div className="flex-1 min-w-0">

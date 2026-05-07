@@ -4,8 +4,6 @@ import { Instagram, ArrowRight } from 'lucide-react'
 import { artists } from '@/lib/data'
 
 export function ArtistsSection() {
-  const cropPositions = ['object-[52%_38%]', 'object-[42%_48%]', 'object-[58%_42%]', 'object-[48%_36%]']
-
   return (
     <section id="artists" className="py-24 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +37,7 @@ export function ArtistsSection() {
                     alt={`${artist.name}, resident tattoo artist at ZUMBIDO TATTOO in Nakameguro, Tokyo`}
                     fill
                     sizes="(min-width: 768px) 40vw, 100vw"
-                    className={`object-cover ${cropPositions[index % cropPositions.length]} [filter:contrast(1.06)_saturate(0.86)_brightness(0.9)] transition duration-700 group-hover:scale-105 group-hover:[filter:contrast(1.08)_saturate(0.9)_brightness(0.96)]`}
+                    className={`object-cover ${artist.profileImagePosition ?? 'object-[50%_42%]'} ${artist.profileImageTone ?? '[filter:contrast(1.06)_saturate(0.86)_brightness(0.9)] group-hover:[filter:contrast(1.08)_saturate(0.9)_brightness(0.96)]'} transition duration-700 group-hover:scale-105`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/92 via-background/12 to-transparent" />
                   <div className="absolute left-5 top-5 font-serif text-5xl text-foreground/10">

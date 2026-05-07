@@ -80,7 +80,7 @@ export default async function ArtistPage({ params }: PageProps) {
                   fill
                   priority
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover gritty-image"
+                  className={`object-cover ${artist.profileImagePosition ?? 'object-[50%_42%]'} ${artist.profileImageTone ?? '[filter:contrast(1.06)_saturate(0.86)_brightness(0.9)]'}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-primary/30" />
@@ -254,7 +254,7 @@ export default async function ArtistPage({ params }: PageProps) {
                           alt={`${relatedArtist.name}, tattoo artist at ZUMBIDO TATTOO Tokyo`}
                           fill
                           sizes="(min-width: 768px) 33vw, 100vw"
-                          className="object-cover gritty-image transition duration-500 group-hover:scale-105"
+                          className={`object-cover ${relatedArtist.profileImagePosition ?? 'object-[50%_42%]'} ${relatedArtist.profileImageTone ?? '[filter:contrast(1.06)_saturate(0.86)_brightness(0.9)]'} transition duration-500 group-hover:scale-105`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
                       </div>

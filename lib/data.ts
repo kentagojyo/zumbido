@@ -10,6 +10,8 @@ export interface Artist {
   instagram: string;
   instagramUrl: string;
   profileImage: string;
+  profileImagePosition?: string;
+  profileImageTone?: string;
   portfolioImages: string[];
   specialties: string[];
   isResident: boolean;
@@ -46,7 +48,9 @@ export const artists: Artist[] = [
     yearsExperience: 15,
     instagram: '@megumu_weirdo',
     instagramUrl: 'https://www.instagram.com/megumu_weirdo/',
-    profileImage: '/images/artist-megumu.png',
+    profileImage: '/images/artists/mika.jpg',
+    profileImagePosition: 'object-[50%_38%]',
+    profileImageTone: '[filter:contrast(1.08)_saturate(0.82)_brightness(0.86)] group-hover:[filter:contrast(1.1)_saturate(0.88)_brightness(0.93)]',
     portfolioImages: [
       '/images/work-blackwork-01.jpg',
       '/images/work-lettering-01.jpg',
@@ -65,7 +69,9 @@ export const artists: Artist[] = [
     yearsExperience: 8,
     instagram: '@yapetas',
     instagramUrl: 'https://www.instagram.com/yapetas/',
-    profileImage: '/images/artists/mika.jpg',
+    profileImage: '/images/artists/yuki.jpg',
+    profileImagePosition: 'object-[52%_44%]',
+    profileImageTone: '[filter:contrast(1.06)_saturate(0.84)_brightness(0.88)] group-hover:[filter:contrast(1.08)_saturate(0.9)_brightness(0.95)]',
     portfolioImages: [
       '/images/work-lettering-01.jpg',
       '/images/work-blackwork-01.jpg',
@@ -84,7 +90,9 @@ export const artists: Artist[] = [
     yearsExperience: 10,
     instagram: '@gentaro_tattoo',
     instagramUrl: 'https://www.instagram.com/gentaro_tattoo/',
-    profileImage: '/images/artists/ryu.jpg',
+    profileImage: '/images/artist-megumu.png',
+    profileImagePosition: 'object-[54%_48%]',
+    profileImageTone: '[filter:grayscale(1)_contrast(1.14)_brightness(0.78)] group-hover:[filter:grayscale(0.85)_contrast(1.16)_brightness(0.86)]',
     portfolioImages: [
       '/images/work-blackwork-01.jpg',
       '/images/work-lettering-01.jpg',
@@ -103,7 +111,9 @@ export const artists: Artist[] = [
     yearsExperience: 6,
     instagram: '@joshualeetattoo',
     instagramUrl: 'https://www.instagram.com/joshualeetattoo/',
-    profileImage: '/images/artists/hana.jpg',
+    profileImage: '/images/artists/ryu.jpg',
+    profileImagePosition: 'object-[58%_36%]',
+    profileImageTone: '[filter:contrast(1.08)_saturate(0.82)_brightness(0.82)] group-hover:[filter:contrast(1.1)_saturate(0.88)_brightness(0.9)]',
     portfolioImages: [
       '/images/work-lettering-01.jpg',
       '/images/work-blackwork-01.jpg',
@@ -122,7 +132,9 @@ export const artists: Artist[] = [
     yearsExperience: 7,
     instagram: '@kotaro_zido',
     instagramUrl: 'https://www.instagram.com/kotaro_zido/',
-    profileImage: '/images/artists/yuki.jpg',
+    profileImage: '/images/guest-artist-01.jpg',
+    profileImagePosition: 'object-[50%_34%]',
+    profileImageTone: '[filter:contrast(1.08)_saturate(0.72)_brightness(0.82)] group-hover:[filter:contrast(1.1)_saturate(0.78)_brightness(0.9)]',
     portfolioImages: [
       '/images/work-lettering-01.jpg',
       '/images/work-blackwork-01.jpg',
@@ -141,7 +153,9 @@ export const artists: Artist[] = [
     yearsExperience: 6,
     instagram: '@echo_tatt',
     instagramUrl: 'https://www.instagram.com/echo_tatt/',
-    profileImage: '/images/artists/mika.jpg',
+    profileImage: '/images/guests/jake.jpg',
+    profileImagePosition: 'object-[50%_34%]',
+    profileImageTone: '[filter:contrast(1.06)_saturate(0.76)_brightness(0.82)] group-hover:[filter:contrast(1.08)_saturate(0.82)_brightness(0.9)]',
     portfolioImages: [
       '/images/portfolio/hana-1.jpg',
       '/images/portfolio/hana-2.jpg',
@@ -160,7 +174,9 @@ export const artists: Artist[] = [
     yearsExperience: 5,
     instagram: '@morgantat2',
     instagramUrl: 'https://www.instagram.com/morgantat2/',
-    profileImage: '/images/artists/ryu.jpg',
+    profileImage: '/images/guests/marcus.jpg',
+    profileImagePosition: 'object-[50%_38%]',
+    profileImageTone: '[filter:contrast(1.08)_saturate(0.78)_brightness(0.8)] group-hover:[filter:contrast(1.1)_saturate(0.84)_brightness(0.88)]',
     portfolioImages: [
       '/images/work-blackwork-01.jpg',
       '/images/portfolio/hana-3.jpg',

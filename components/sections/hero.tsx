@@ -46,7 +46,7 @@ export function HeroSection() {
         <h1 className="sr-only">ZUMBIDO TATTOO</h1>
         <div className="relative mx-auto mb-7 h-44 w-32 sm:h-56 sm:w-40 md:h-64 md:w-48 lg:h-72 lg:w-52">
           <Image
-            src="/images/zumbido-logo-real.png"
+            src="/images/zumbido-logo.png"
             alt="ZUMBIDO TATTOO"
             fill
             priority

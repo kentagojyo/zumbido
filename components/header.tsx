@@ -26,7 +26,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="ZUMBIDO TATTOO home">
             <Image
-              src="/images/zumbido-logo-real.png"
+              src="/images/zumbido-logo.png"
               alt="ZUMBIDO TATTOO logo"
               width={1024}
               height={1536}
@@ -76,7 +76,7 @@ export function Header() {
             <SheetContent side="right" className="w-full sm:w-80 bg-background border-border">
               <SheetTitle className="mb-8 flex items-center">
                 <Image
-                  src="/images/zumbido-logo-real.png"
+                  src="/images/zumbido-logo.png"
                   alt="ZUMBIDO TATTOO logo"
                   width={1024}
                   height={1536}

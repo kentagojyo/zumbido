@@ -9,19 +9,15 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2">
-            <Link href="/" className="mb-4 inline-flex items-center gap-3" aria-label="ZUMBIDO TATTOO home">
-              <span className="relative h-14 w-14">
-                <Image
-                  src="/images/zumbido-logo-real.png"
-                  alt="ZUMBIDO TATTOO logo"
-                  fill
-                  sizes="56px"
-                  className="object-contain drop-shadow-[0_0_18px_rgba(190,18,60,0.36)]"
-                />
-              </span>
-              <span className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                Tattoo Studio
-              </span>
+            <Link href="/" className="mb-4 inline-flex items-center" aria-label="ZUMBIDO TATTOO home">
+              <Image
+                src="/images/zumbido-logo.png"
+                alt="ZUMBIDO TATTOO logo"
+                width={1024}
+                height={1536}
+                sizes="56px"
+                className="h-14 w-auto object-contain object-left drop-shadow-[0_0_18px_rgba(190,18,60,0.36)]"
+              />
             </Link>
             <p className="text-muted-foreground max-w-md leading-relaxed">
               Underground tattoo studio in the heart of Nakameguro, Tokyo.

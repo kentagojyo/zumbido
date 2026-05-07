@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Script from 'next/script'
 import { Instagram, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { portfolioImages } from '@/lib/data'
@@ -105,6 +106,31 @@ export function WorksSection() {
               <ExternalLink className="w-3 h-3 ml-2" />
             </Link>
           </Button>
+        </div>
+
+        <div className="mt-16 border border-border/70 bg-card/70 p-5 sm:p-6 md:p-8">
+          <div className="mb-8 max-w-2xl">
+            <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4 block">
+              Studio Feed
+            </span>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+              Latest on Instagram
+            </h3>
+            <p className="mt-4 text-muted-foreground">
+              Follow our latest work, guest spots, and studio updates.
+            </p>
+          </div>
+          <div className="overflow-hidden bg-background/60">
+            <Script
+              id="elfsight-platform"
+              src="https://elfsightcdn.com/platform.js"
+              strategy="lazyOnload"
+            />
+            <div
+              className="elfsight-app-d36ba8ee-2aa1-476f-9ea5-7cde55ff96ef min-h-[420px] w-full"
+              data-elfsight-app-lazy
+            />
+          </div>
         </div>
       </div>
     </section>

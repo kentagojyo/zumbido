@@ -2,9 +2,11 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import Image from 'next/image'
+import Script from 'next/script'
 import { Instagram, ArrowLeft, ArrowRight, Calendar, MessageCircle } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import { InstagramFeedEmbed } from '@/components/instagram-feed-embed'
 import { Button } from '@/components/ui/button'
 import { artists } from '@/lib/data'
 
@@ -54,6 +56,13 @@ export default async function ArtistPage({ params }: PageProps) {
   }
 
   const relatedArtists = artists.filter((a) => a.id !== artist.id && a.isResident).slice(0, 3)
+  const instagramPostUrls = artist.instagramPostUrls.slice(0, 9)
+  const instagramSlotCount = Math.max(6, instagramPostUrls.length)
+  const instagramSlots = Array.from({ length: instagramSlotCount }, (_, index) => instagramPostUrls[index])
+  const hasInstagramPosts = instagramPostUrls.length > 0
+  const instagramProfileUrl = artist.instagramProfileUrl || artist.instagramUrl
+  const instagramFeedEmbed = artist.instagramFeedEmbedUrl || artist.instagramFeedEmbed
+  const hasInstagramFeedEmbed = Boolean(instagramFeedEmbed)
 
   return (
     <>
@@ -104,7 +113,7 @@ export default async function ArtistPage({ params }: PageProps) {
 
                 {/* Instagram */}
                 <Link 
-                  href={artist.instagramUrl}
+                  href={instagramProfileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8"
@@ -159,7 +168,7 @@ export default async function ArtistPage({ params }: PageProps) {
                     className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs"
                   >
                     <Link 
-                      href={artist.instagramUrl}
+                      href={instagramProfileUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -215,7 +224,7 @@ export default async function ArtistPage({ params }: PageProps) {
 
             <div className="mt-8 text-center">
               <Link 
-                href={artist.instagramUrl}
+                href={instagramProfileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-primary transition-colors hover:text-primary/80 text-sm uppercase tracking-wider"
@@ -223,6 +232,97 @@ export default async function ArtistPage({ params }: PageProps) {
                 <Instagram className="w-4 h-4" />
                 See more on Instagram
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Instagram Portfolio */}
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-12">
+              <div>
+                <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4 block">
+                  Social Archive
+                </span>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+                  Latest Instagram Work
+                </h2>
+                <p className="mt-4 max-w-2xl text-muted-foreground">
+                  Hand-selected Instagram work from {artist.name}. Add a LightWidget feed URL or post URLs in the artist data file to publish embedded work here.
+                </p>
+              </div>
+            </div>
+
+            {instagramFeedEmbed ? (
+              <div>
+                <h3 className="mb-6 text-xl md:text-2xl font-serif font-bold text-foreground">
+                  Instagram Portfolio
+                </h3>
+                <InstagramFeedEmbed
+                  embed={instagramFeedEmbed}
+                  title={`${artist.name} Instagram feed`}
+                />
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {instagramSlots.map((postUrl, index) => (
+                  <article
+                    key={postUrl ?? `instagram-placeholder-${index}`}
+                    className="min-h-[420px] overflow-hidden border border-border/70 bg-card/70 transition-colors hover:border-primary/40"
+                  >
+                    {postUrl ? (
+                      <blockquote
+                        className="instagram-media h-full w-full bg-background p-4"
+                        data-instgrm-permalink={postUrl}
+                        data-instgrm-version="14"
+                      >
+                        <Link
+                          href={postUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex min-h-[380px] items-center justify-center text-center text-sm uppercase tracking-[0.2em] text-primary transition-colors hover:text-primary/80"
+                        >
+                          View this post on Instagram
+                        </Link>
+                      </blockquote>
+                    ) : (
+                      <div className="flex min-h-[420px] flex-col justify-between p-6">
+                        <div className="flex items-center justify-between">
+                          <span className="font-serif text-5xl text-foreground/10">
+                            {String(index + 1).padStart(2, '0')}
+                          </span>
+                          <Instagram className="h-5 w-5 text-primary/70" />
+                        </div>
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.24em] text-primary/80">
+                            Awaiting Post URL
+                          </p>
+                          <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                            Add an Instagram post URL to {artist.name}&apos;s `instagramPostUrls` array in `lib/data.ts` to embed work in this slot.
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            )}
+
+            <div className="mt-8">
+              <Button
+                asChild
+                variant="outline"
+                className="border-border hover:bg-secondary uppercase tracking-wider text-xs"
+              >
+                <Link
+                  href={instagramProfileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="w-4 h-4 mr-2" />
+                  View more on Instagram
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
@@ -275,6 +375,9 @@ export default async function ArtistPage({ params }: PageProps) {
           </section>
         )}
       </main>
+      {hasInstagramPosts && (
+        <Script async src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
+      )}
       <Footer />
     </>
   )

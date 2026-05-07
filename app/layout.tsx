@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     description: 'Premium tattoo studio in Nakameguro, Tokyo. Bold lines. Dark culture. Tokyo ink.',
     images: [
       {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/images/hero.jpg',
+        width: 1024,
+        height: 1024,
         alt: 'ZUMBIDO TATTOO - Nakameguro, Tokyo',
       },
     ],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ZUMBIDO TATTOO | Nakameguro, Tokyo',
     description: 'Underground tattoo studio in Tokyo. Japanese traditional, blackwork, realism & more.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/hero.jpg'],
   },
   robots: {
     index: true,
@@ -95,7 +95,7 @@ export default function RootLayout({
                 },
               ],
               priceRange: '¥¥¥',
-              image: 'https://zumbidotattoo.com/images/og-image.jpg',
+              image: 'https://zumbidotattoo.com/images/hero.jpg',
               url: 'https://zumbidotattoo.com',
               sameAs: ['https://instagram.com/zumbido_tattoo'],
               acceptsReservations: true,

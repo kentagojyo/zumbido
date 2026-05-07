@@ -43,9 +43,17 @@ export function HeroSection() {
           </svg>
         </div>
 
-        <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider text-primary text-shadow-gothic mb-6">
-          ZUMBIDO
-        </h1>
+        <h1 className="sr-only">ZUMBIDO TATTOO</h1>
+        <div className="relative mx-auto mb-7 h-36 w-36 sm:h-44 sm:w-44 md:h-56 md:w-56 lg:h-64 lg:w-64">
+          <Image
+            src="/images/zumbido-logo-red.png"
+            alt="ZUMBIDO TATTOO"
+            fill
+            priority
+            sizes="(min-width: 1024px) 256px, (min-width: 768px) 224px, 176px"
+            className="object-contain drop-shadow-[0_0_52px_rgba(190,18,60,0.62)]"
+          />
+        </div>
         <div className="flex items-center justify-center gap-4 mb-8">
           <span className="h-px w-12 bg-primary/60" />
           <span className="text-xs sm:text-sm tracking-[0.3em] uppercase text-foreground/80">

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, Instagram } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -23,12 +24,16 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative">
-              <span className="text-xl md:text-2xl font-serif font-bold text-primary tracking-wider">
-                ZUMBIDO
-              </span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+          <Link href="/" className="flex items-center gap-3 group" aria-label="ZUMBIDO TATTOO home">
+            <div className="relative h-9 w-9 md:h-11 md:w-11">
+              <Image
+                src="/images/zumbido-logo-red.png"
+                alt="ZUMBIDO TATTOO logo"
+                fill
+                sizes="44px"
+                className="object-contain drop-shadow-[0_0_18px_rgba(190,18,60,0.45)]"
+                priority
+              />
             </div>
             <span className="text-xs text-muted-foreground tracking-widest uppercase hidden sm:block">
               Tattoo
@@ -73,8 +78,19 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full sm:w-80 bg-background border-border">
-              <SheetTitle className="text-xl font-serif font-bold text-primary tracking-wider mb-8">
-                ZUMBIDO
+              <SheetTitle className="mb-8 flex items-center gap-3">
+                <span className="relative h-12 w-12">
+                  <Image
+                    src="/images/zumbido-logo-red.png"
+                    alt="ZUMBIDO TATTOO logo"
+                    fill
+                    sizes="48px"
+                    className="object-contain"
+                  />
+                </span>
+                <span className="text-sm uppercase tracking-[0.28em] text-muted-foreground">
+                  Tattoo
+                </span>
               </SheetTitle>
               <div className="flex flex-col h-full">
                 <nav className="flex flex-col gap-4">

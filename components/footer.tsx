@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Instagram, Mail, MapPin } from 'lucide-react'
 import { studioInfo } from '@/lib/data'
@@ -7,15 +8,23 @@ export function Footer() {
     <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block">
-              <h3 className="text-3xl font-serif font-bold text-primary tracking-wider mb-4">
-                ZUMBIDO TATTOO
-              </h3>
+            <Link href="/" className="mb-4 inline-flex items-center gap-3" aria-label="ZUMBIDO TATTOO home">
+              <span className="relative h-14 w-14">
+                <Image
+                  src="/images/zumbido-logo-red.png"
+                  alt="ZUMBIDO TATTOO logo"
+                  fill
+                  sizes="56px"
+                  className="object-contain drop-shadow-[0_0_18px_rgba(190,18,60,0.36)]"
+                />
+              </span>
+              <span className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
+                Tattoo Studio
+              </span>
             </Link>
             <p className="text-muted-foreground max-w-md leading-relaxed">
-              Underground tattoo studio in the heart of Nakameguro, Tokyo. 
+              Underground tattoo studio in the heart of Nakameguro, Tokyo.
               Crafting bold, dark, and artistic ink since 2010.
             </p>
             <div className="flex items-center gap-4 mt-6">
@@ -38,7 +47,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-4">
               Navigation
@@ -63,7 +71,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-4">
               Contact
@@ -84,13 +91,12 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
             <p>© {new Date().getFullYear()} ZUMBIDO TATTOO. All rights reserved.</p>
             <p className="flex items-center gap-1">
               <span>Nakameguro, Tokyo</span>
-              <span className="text-primary">•</span>
+              <span className="text-primary">/</span>
               <span>Est. 2010</span>
             </p>
           </div>

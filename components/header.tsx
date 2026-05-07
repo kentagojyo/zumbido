@@ -24,14 +24,18 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 md:h-32">
           {/* Logo */}
-          <Link href="/" className="flex items-center" aria-label="ZUMBIDO TATTOO home">
+          <Link
+            href="/"
+            className="flex h-[84px] items-center overflow-hidden md:h-28"
+            aria-label="ZUMBIDO TATTOO home"
+          >
             <Image
               src="/images/zumbido-logo.png"
               alt="ZUMBIDO TATTOO logo"
-              width={1024}
-              height={1536}
-              sizes="(min-width: 768px) 112px, 84px"
-              className="h-[84px] md:h-28 w-auto object-contain object-left drop-shadow-[0_0_22px_rgba(190,18,60,0.5)]"
+              width={1536}
+              height={1024}
+              sizes="(min-width: 768px) 168px, 126px"
+              className="h-[126px] w-auto max-w-none object-contain object-left drop-shadow-[0_0_18px_rgba(190,18,60,0.42)] md:h-[168px]"
               priority
             />
           </Link>

@@ -12,11 +12,11 @@ export function HeroSection() {
         fill
         priority
         sizes="100vw"
-        className="object-cover scale-105 gritty-image"
+        className="object-cover scale-105 [filter:contrast(1.06)_saturate(0.94)_brightness(1.08)]"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,transparent_0%,rgba(0,0,0,0.3)_34%,rgba(0,0,0,0.88)_78%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/65 via-background/40 to-background" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/45 to-background/80" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,transparent_0%,rgba(0,0,0,0.22)_36%,rgba(0,0,0,0.8)_80%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/28 to-background/95" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/88 via-background/28 to-background/72" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       <div
         className="absolute inset-0 opacity-[0.08]"
@@ -44,14 +44,14 @@ export function HeroSection() {
         </div>
 
         <h1 className="sr-only">ZUMBIDO TATTOO</h1>
-        <div className="relative mx-auto mb-7 h-44 w-32 sm:h-56 sm:w-40 md:h-64 md:w-48 lg:h-72 lg:w-52">
+        <div className="relative mx-auto mb-7 h-40 w-28 sm:h-52 sm:w-36 md:h-60 md:w-44 lg:h-64 lg:w-48">
           <Image
             src="/images/zumbido-logo-real.png"
             alt="ZUMBIDO TATTOO"
             fill
             priority
-            sizes="(min-width: 1024px) 216px, (min-width: 768px) 192px, 160px"
-            className="object-contain drop-shadow-[0_0_52px_rgba(190,18,60,0.62)]"
+            sizes="(min-width: 1024px) 192px, (min-width: 768px) 176px, 144px"
+            className="object-contain drop-shadow-[0_0_24px_rgba(190,18,60,0.32)]"
           />
         </div>
         <div className="flex items-center justify-center gap-4 mb-8">

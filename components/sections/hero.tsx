@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ChevronDown } from 'lucide-react'
@@ -5,8 +6,17 @@ import { ChevronDown } from 'lucide-react'
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero.jpg"
+          alt="ZUMBIDO TATTOO Studio"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
         {/* Dark cinematic overlay pattern */}
         <div className="absolute inset-0 opacity-20" 
           style={{

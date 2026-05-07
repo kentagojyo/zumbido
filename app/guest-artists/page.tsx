@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Instagram, ArrowLeft, MapPin, Calendar, Mail } from 'lucide-react'
 import { Header } from '@/components/header'
@@ -72,11 +73,14 @@ export default function GuestArtistsPage() {
                     className="bg-card border border-border hover:border-primary/30 transition-colors overflow-hidden"
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-3">
-                      {/* Image placeholder */}
-                      <div className="aspect-square sm:aspect-auto bg-secondary flex items-center justify-center">
-                        <span className="text-6xl font-serif font-bold text-primary/20">
-                          {guest.name.charAt(0)}
-                        </span>
+                      {/* Guest Artist Image */}
+                      <div className="relative aspect-square sm:aspect-auto overflow-hidden">
+                        <Image
+                          src={guest.profileImage}
+                          alt={guest.name}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
 
                       {/* Content */}
@@ -191,10 +195,13 @@ export default function GuestArtistsPage() {
                   className="bg-background border border-border p-6 opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 bg-secondary shrink-0 flex items-center justify-center">
-                      <span className="text-xl font-serif font-bold text-primary/30">
-                        {guest.name.charAt(0)}
-                      </span>
+                    <div className="relative w-16 h-16 shrink-0 overflow-hidden">
+                      <Image
+                        src={guest.profileImage}
+                        alt={guest.name}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                     <div>
                       <h3 className="font-serif font-bold text-foreground">

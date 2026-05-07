@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Clock, Phone, ExternalLink, Train } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -22,19 +23,16 @@ export function LocationSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Map Placeholder */}
-          <div className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] bg-secondary border border-border overflow-hidden">
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <MapPin className="w-12 h-12 text-primary/30 mb-4" />
-              <span className="text-sm text-muted-foreground/50 uppercase tracking-wider">
-                Google Map
-              </span>
-              <span className="text-xs text-muted-foreground/30 mt-2">
-                Nakameguro, Tokyo
-              </span>
-            </div>
+          {/* Studio Image */}
+          <div className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] overflow-hidden">
+            <Image
+              src="/images/studio.jpg"
+              alt="ZUMBIDO TATTOO Studio exterior in Nakameguro"
+              fill
+              className="object-cover"
+            />
             {/* Map overlay effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent pointer-events-none" />
             
             {/* Open in maps button */}
             <div className="absolute bottom-6 left-6 right-6">

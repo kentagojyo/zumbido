@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Instagram, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -53,17 +54,17 @@ export function WorksSection() {
 
         {/* Gallery Grid - Instagram-style */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-2">
-          {filteredImages.map((image, index) => (
+          {filteredImages.map((image) => (
             <div 
               key={image.id} 
               className="relative aspect-square bg-secondary group cursor-pointer overflow-hidden"
             >
-              {/* Placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-4xl font-serif font-bold text-primary/10">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-              </div>
+              <Image
+                src={image.src}
+                alt={`${image.style} tattoo by ${image.artist}`}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">

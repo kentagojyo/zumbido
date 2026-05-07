@@ -1,27 +1,33 @@
+import Image from 'next/image'
+
 export function AboutSection() {
   return (
     <section id="about" className="py-24 md:py-32 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image placeholder */}
-          <div className="relative aspect-[4/5] bg-secondary overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <svg 
-                  className="w-16 h-16 text-primary/30 mx-auto mb-4" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M11 2h2v8h8v2h-8v8h-2v-8H3v-2h8z" />
-                </svg>
-                <span className="text-sm text-muted-foreground/50 uppercase tracking-wider">
-                  Studio Image
-                </span>
+          {/* Image Grid */}
+          <div className="relative">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src="/images/about-1.jpg"
+                  alt="Tattoo artist at work"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[3/4] overflow-hidden mt-8">
+                <Image
+                  src="/images/about-2.jpg"
+                  alt="ZUMBIDO studio interior"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
             {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-primary/30" />
-            <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-primary/30" />
+            <div className="absolute -top-2 -left-2 w-16 h-16 border-l-2 border-t-2 border-primary/30" />
+            <div className="absolute -bottom-2 -right-2 w-16 h-16 border-r-2 border-b-2 border-primary/30" />
           </div>
 
           {/* Content */}

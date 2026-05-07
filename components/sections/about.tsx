@@ -26,7 +26,7 @@ export function AboutSection() {
             <div className="absolute -right-4 -bottom-6 hidden w-44 overflow-hidden border border-border bg-background shadow-2xl md:block lg:-right-8">
               <div className="relative aspect-square">
                 <Image
-                  src="/images/artist-megumu.png"
+                  src="/images/artists/Megu.png"
                   alt="Tattoo studio detail at ZUMBIDO TATTOO Tokyo"
                   fill
                   sizes="176px"

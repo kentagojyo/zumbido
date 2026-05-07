@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <Image
-        src="/images/hero.jpg"
+        src="/images/hero-01.jpg"
         alt="Dark cinematic interior of ZUMBIDO TATTOO, an underground tattoo studio in Nakameguro, Tokyo"
         fill
         priority
@@ -46,7 +46,7 @@ export function HeroSection() {
         <h1 className="sr-only">ZUMBIDO TATTOO</h1>
         <div className="relative mx-auto mb-7 h-36 w-36 sm:h-44 sm:w-44 md:h-56 md:w-56 lg:h-64 lg:w-64">
           <Image
-            src="/images/zumbido-logo-red.png"
+            src="/images/zumbido-logo-real.png"
             alt="ZUMBIDO TATTOO"
             fill
             priority

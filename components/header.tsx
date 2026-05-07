@@ -27,7 +27,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3 group" aria-label="ZUMBIDO TATTOO home">
             <div className="relative h-9 w-9 md:h-11 md:w-11">
               <Image
-                src="/images/zumbido-logo-red.png"
+                src="/images/zumbido-logo-real.png"
                 alt="ZUMBIDO TATTOO logo"
                 fill
                 sizes="44px"
@@ -81,7 +81,7 @@ export function Header() {
               <SheetTitle className="mb-8 flex items-center gap-3">
                 <span className="relative h-12 w-12">
                   <Image
-                    src="/images/zumbido-logo-red.png"
+                    src="/images/zumbido-logo-real.png"
                     alt="ZUMBIDO TATTOO logo"
                     fill
                     sizes="48px"

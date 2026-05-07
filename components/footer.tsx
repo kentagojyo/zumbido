@@ -12,7 +12,7 @@ export function Footer() {
             <Link href="/" className="mb-4 inline-flex items-center gap-3" aria-label="ZUMBIDO TATTOO home">
               <span className="relative h-14 w-14">
                 <Image
-                  src="/images/zumbido-logo-red.png"
+                  src="/images/zumbido-logo-real.png"
                   alt="ZUMBIDO TATTOO logo"
                   fill
                   sizes="56px"

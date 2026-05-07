@@ -8,7 +8,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="relative aspect-[4/5] bg-secondary overflow-hidden border border-border">
               <Image
-                src="/images/about-1.jpg"
+                src="/images/studio-01.jpg"
                 alt="Inside ZUMBIDO TATTOO, an English-friendly tattoo studio in Nakameguro, Tokyo"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -26,7 +26,7 @@ export function AboutSection() {
             <div className="absolute -right-4 -bottom-6 hidden w-44 overflow-hidden border border-border bg-background shadow-2xl md:block lg:-right-8">
               <div className="relative aspect-square">
                 <Image
-                  src="/images/about-2.jpg"
+                  src="/images/artist-megumu.png"
                   alt="Tattoo studio detail at ZUMBIDO TATTOO Tokyo"
                   fill
                   sizes="176px"

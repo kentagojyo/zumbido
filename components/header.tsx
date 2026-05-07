@@ -22,7 +22,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-24 md:h-32">
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="ZUMBIDO TATTOO home">
             <Image
@@ -30,8 +30,8 @@ export function Header() {
               alt="ZUMBIDO TATTOO logo"
               width={1024}
               height={1536}
-              sizes="(min-width: 768px) 48px, 40px"
-              className="h-10 md:h-12 w-auto object-contain object-left drop-shadow-[0_0_18px_rgba(190,18,60,0.45)]"
+              sizes="(min-width: 768px) 112px, 84px"
+              className="h-[84px] md:h-28 w-auto object-contain object-left drop-shadow-[0_0_22px_rgba(190,18,60,0.5)]"
               priority
             />
           </Link>
@@ -80,8 +80,8 @@ export function Header() {
                   alt="ZUMBIDO TATTOO logo"
                   width={1024}
                   height={1536}
-                  sizes="48px"
-                  className="h-12 w-auto object-contain object-left"
+                  sizes="88px"
+                  className="h-[88px] w-auto object-contain object-left"
                 />
               </SheetTitle>
               <div className="flex flex-col h-full">

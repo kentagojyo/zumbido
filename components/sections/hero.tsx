@@ -44,13 +44,13 @@ export function HeroSection() {
         </div>
 
         <h1 className="sr-only">ZUMBIDO TATTOO</h1>
-        <div className="relative mx-auto mb-7 h-36 w-36 sm:h-44 sm:w-44 md:h-56 md:w-56 lg:h-64 lg:w-64">
+        <div className="relative mx-auto mb-7 h-44 w-32 sm:h-56 sm:w-40 md:h-64 md:w-48 lg:h-72 lg:w-52">
           <Image
             src="/images/zumbido-logo-real.png"
             alt="ZUMBIDO TATTOO"
             fill
             priority
-            sizes="(min-width: 1024px) 256px, (min-width: 768px) 224px, 176px"
+            sizes="(min-width: 1024px) 216px, (min-width: 768px) 192px, 160px"
             className="object-contain drop-shadow-[0_0_52px_rgba(190,18,60,0.62)]"
           />
         </div>

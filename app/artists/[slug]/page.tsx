@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Script from 'next/script'
-import { Instagram, ArrowLeft, ArrowRight, Calendar, MessageCircle } from 'lucide-react'
+import { Instagram, ArrowLeft, ArrowRight, MessageCircle } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { InstagramFeedEmbed } from '@/components/instagram-feed-embed'
@@ -31,12 +31,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  const styleDescription = artist.style.length
+    ? ` with work connected to ${artist.style.join(', ')}`
+    : ''
+  const styleKeywords = artist.style.map(s => `${s} tattoo tokyo`)
+
   return {
     title: `${artist.name} | Tattoo Artist in Nakameguro Tokyo`,
-    description: `${artist.shortBio} Book a consultation with ${artist.name} at ZUMBIDO TATTOO, an English-friendly tattoo studio in Tokyo specializing in ${artist.style.join(', ')}.`,
+    description: `${artist.shortBio} Book a consultation with ${artist.name} at ZUMBIDO TATTOO, an English-friendly tattoo studio in Tokyo${styleDescription}.`,
     keywords: [
       `${artist.name} tattoo`,
-      ...artist.style.map(s => `${s} tattoo tokyo`),
+      ...styleKeywords,
       'Nakameguro Tattoo',
       'Tokyo Tattoo Studio',
       'English-friendly tattoo studio in Tokyo',
@@ -124,13 +129,6 @@ export default async function ArtistPage({ params }: PageProps) {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4">
                   {artist.name}
                 </h1>
-                
-                {/* Experience */}
-                <div className="flex items-center gap-2 text-muted-foreground mb-6">
-                  <Calendar className="w-4 h-4 text-primary" />
-                  <span>{artist.yearsExperience}+ years experience in Tokyo</span>
-                </div>
-
                 {/* Instagram */}
                 <Link 
                   href={instagramProfileUrl}
@@ -143,26 +141,28 @@ export default async function ArtistPage({ params }: PageProps) {
                 </Link>
 
                 {/* Bio */}
-                <p className="text-muted-foreground leading-relaxed mb-8">
+                <p className="whitespace-pre-line text-muted-foreground leading-relaxed mb-8">
                   {artist.bio}
                 </p>
 
                 {/* Specialties */}
-                <div className="mb-8">
-                  <h3 className="text-xs uppercase tracking-wider text-muted-foreground mb-3">
-                    Specialties
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {artist.specialties.map((specialty) => (
-                      <span 
-                        key={specialty}
-                        className="px-3 py-1.5 bg-secondary text-xs text-muted-foreground uppercase tracking-wider border border-border"
-                      >
-                        {specialty}
-                      </span>
-                    ))}
+                {artist.specialties.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="text-xs uppercase tracking-wider text-muted-foreground mb-3">
+                      Specialties
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {artist.specialties.map((specialty) => (
+                        <span
+                          key={specialty}
+                          className="px-3 py-1.5 bg-secondary text-xs text-muted-foreground uppercase tracking-wider border border-border"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Styles */}
                 <div className="mb-8">

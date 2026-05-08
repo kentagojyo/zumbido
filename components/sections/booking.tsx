@@ -144,7 +144,7 @@ export function BookingSection() {
                     {artist.name}
                   </span>
                   <span className="block text-xs text-muted-foreground">
-                    {artist.style[0]}
+                    {artist.style[0] ?? 'Resident artist'}
                   </span>
                 </div>
                 <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors ml-2" />

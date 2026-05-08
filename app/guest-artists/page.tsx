@@ -68,7 +68,7 @@ export default function GuestArtistsPage() {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 ZUMBIDO TATTOO welcomes world-class tattoo artists from around the globe 
                 for limited residencies at our Nakameguro, Tokyo studio. These Guest Artists
-                in Tokyo offer a rare opportunity to get tattooed by international masters
+                in Tokyo offer a rare opportunity to get tattooed by visiting artists
                 without leaving Japan.
               </p>
             </div>

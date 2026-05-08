@@ -13,5 +13,5 @@ export const siteUrl = normalizeSiteUrl(
         : temporaryProductionUrl)
 )
 
-export const ogImagePath = '/images/og-zumbido.png'
+export const ogImagePath = '/images/og-zumbido.jpg'
 export const ogImageUrl = new URL(ogImagePath, siteUrl).toString()

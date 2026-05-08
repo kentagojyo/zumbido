@@ -48,35 +48,34 @@ export function AboutSection() {
             <div className="max-w-xl space-y-7 text-muted-foreground leading-8">
               <p>
                 ZUMBIDO TATTOO is an underground tattoo studio located in the artistic
-                neighborhood of Nakameguro, Tokyo. Founded in 2010, we have built a
-                reputation for bold, uncompromising tattoo art that pushes creative
-                boundaries while honoring traditional techniques.
+                neighborhood of Nakameguro, Tokyo. The studio brings together resident
+                and guest artists for custom tattoo work with a dark, editorial Tokyo
+                atmosphere.
               </p>
               <p>
-                Our collective of artists brings diverse backgrounds and specializations from
-                Japanese traditional and neo-Japanese to blackwork, realism, and fine line.
-                We welcome Tokyo locals and international clients with an English-speaking
-                team ready to shape meaningful, lasting work.
+                We welcome Tokyo locals and international clients with English-friendly
+                support, clear consultation, and a booking flow built around references,
+                placement, scale, and artist fit.
               </p>
             </div>
 
             <div className="grid grid-cols-3 gap-6 sm:gap-8 mt-14 pt-9 border-t border-border">
               <div>
-                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">15+</span>
-                <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-1">
-                  Years Active
-                </span>
-              </div>
-              <div>
-                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">4</span>
+                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">7</span>
                 <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-1">
                   Resident Artists
                 </span>
               </div>
               <div>
-                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">10K+</span>
+                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">EN/JP</span>
                 <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-1">
-                  Tattoos Done
+                  Consultation
+                </span>
+              </div>
+              <div>
+                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">Guest</span>
+                <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-1">
+                  Artists
                 </span>
               </div>
             </div>

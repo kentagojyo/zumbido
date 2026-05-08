@@ -8,7 +8,7 @@ export interface Artist {
   style: string[];
   bio: string;
   shortBio: string;
-  yearsExperience: number;
+  yearsExperience?: number;
   instagram: string;
   instagramUrl: string;
   instagramProfileUrl: string;
@@ -42,19 +42,21 @@ export interface FAQ {
   answer: string;
 }
 
+const meguInstagramUrl = 'https://www.instagram.com/megumu_weirdo/';
+
 export const artists: Artist[] = [
   {
     id: '1',
     slug: 'megu',
     name: 'Megu',
     title: 'Lead Artist & Founder',
-    style: ['Japanese Traditional', 'Neo-Japanese', 'Blackwork'],
-    bio: 'Megu is the founder and lead artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. With over 15 years of experience in the tattoo industry, Megu has developed a distinctive style that blends traditional Japanese aesthetics with contemporary techniques. The work is known for bold compositions, precise linework, and a deep respect for the heritage of Japanese tattooing. Based in the heart of Tokyo, Megu welcomes both local and international clients seeking authentic Japanese tattoo artistry.',
-    shortBio: 'Founder of ZUMBIDO TATTOO. Master of Japanese traditional and neo-Japanese styles with 15+ years in Tokyo.',
-    yearsExperience: 15,
+    style: ['American Traditional', 'Japanese Traditional', 'Neo-Japanese'],
+    bio: 'Megu is the founder and lead artist of ZUMBIDO TATTOO in Nakameguro, Tokyo.\n\nBlending the aesthetics of traditional Japanese tattooing, American Traditional, and Neo-Japanese influences, Megu has developed a distinctive visual language built on bold compositions, precise linework, and a deep respect for tattoo heritage.\n\nWith over 30 years of experience in the tattoo industry, Megu works with both local and international clients seeking authentic custom tattoo work in Tokyo.\n\nFor booking inquiries, please contact via Instagram DM.',
+    shortBio: 'Founder and lead artist of ZUMBIDO TATTOO, blending American Traditional, Japanese Traditional, and Neo-Japanese influences.',
+    yearsExperience: 30,
     instagram: '@megumu_weirdo',
-    instagramUrl: 'https://www.instagram.com/megumu_weirdo/',
-    instagramProfileUrl: 'https://www.instagram.com/megumu_weirdo/',
+    instagramUrl: meguInstagramUrl,
+    instagramProfileUrl: meguInstagramUrl,
     profileImage: '/images/artists/Megu.png',
     profileImagePosition: 'object-[50%_38%]',
     profileImageTone: '[filter:contrast(1.08)_saturate(0.82)_brightness(0.86)] group-hover:[filter:contrast(1.1)_saturate(0.88)_brightness(0.93)]',
@@ -62,9 +64,15 @@ export const artists: Artist[] = [
       '/images/work-blackwork-01.jpg',
       '/images/work-lettering-01.jpg',
     ],
-    instagramPostUrls: [],
+    instagramPostUrls: [
+      'https://www.instagram.com/p/DHCh1OeSeK0/?img_index=1',
+      'https://www.instagram.com/p/DUaweHujwz-/?img_index=1',
+      'https://www.instagram.com/p/CzdklXbyS0s/',
+      'https://www.instagram.com/p/DJl8ac5SwXC/?img_index=1',
+      'https://www.instagram.com/p/DDZyBCdSZlZ/?img_index=1',
+    ],
     instagramFeedEmbedUrl: '',
-    specialties: ['Full Sleeves', 'Back Pieces', 'Japanese Mythology', 'Koi', 'Dragons'],
+    specialties: [],
     isResident: true,
   },
   {
@@ -73,9 +81,8 @@ export const artists: Artist[] = [
     name: 'Yasu',
     title: 'Senior Artist',
     style: ['Blackwork', 'Geometric', 'Ornamental'],
-    bio: 'Yasu brings a precise, architectural perspective to ZUMBIDO TATTOO in Nakameguro, Tokyo, specializing in blackwork and geometric designs. With 8 years of tattooing experience in Tokyo, Yasu has built a reputation for intricate ornamental pieces that push the boundaries of contemporary tattooing.',
-    shortBio: 'Blackwork specialist with an architectural eye. Creating geometric masterpieces in Tokyo for 8 years.',
-    yearsExperience: 8,
+    bio: 'Yasu is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
+    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
     instagram: '@yapetas',
     instagramUrl: 'https://www.instagram.com/yapetas/',
     instagramProfileUrl: 'https://www.instagram.com/yapetas/',
@@ -88,7 +95,7 @@ export const artists: Artist[] = [
     ],
     instagramPostUrls: [],
     instagramFeedEmbedUrl: '',
-    specialties: ['Mandalas', 'Sacred Geometry', 'Dotwork', 'Ornamental', 'Minimalist'],
+    specialties: [],
     isResident: true,
   },
   {
@@ -97,9 +104,8 @@ export const artists: Artist[] = [
     name: 'Gentaro',
     title: 'Artist',
     style: ['Realism', 'Dark Art', 'Horror'],
-    bio: 'Gentaro is a master of dark realism at ZUMBIDO TATTOO in Nakameguro, Tokyo. His work explores dramatic contrast, atmosphere, and depth for clients wanting bold pieces with a cinematic presence.',
-    shortBio: 'Dark realism specialist. 10 years creating horror-inspired masterpieces in Tokyo.',
-    yearsExperience: 10,
+    bio: 'Gentaro is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
+    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
     instagram: '@gentaro_tattoo',
     instagramUrl: 'https://www.instagram.com/gentaro_tattoo/',
     instagramProfileUrl: 'https://www.instagram.com/gentaro_tattoo/',
@@ -112,7 +118,7 @@ export const artists: Artist[] = [
     ],
     instagramPostUrls: [],
     instagramFeedEmbedUrl: '',
-    specialties: ['Portraits', 'Horror', 'Dark Surrealism', 'Skulls', 'Gothic'],
+    specialties: [],
     isResident: true,
   },
   {
@@ -121,9 +127,8 @@ export const artists: Artist[] = [
     name: 'Josh',
     title: 'Artist',
     style: ['Fine Line', 'Illustrative', 'Botanical'],
-    bio: 'Josh brings delicate precision to ZUMBIDO TATTOO in Nakameguro, Tokyo. Specializing in fine line work and illustration, his tattoos balance detail, restraint, and contemporary composition.',
-    shortBio: 'Fine line artist from Seoul, now creating botanical art in Tokyo for 6 years.',
-    yearsExperience: 6,
+    bio: 'Josh is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
+    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
     instagram: '@joshualeetattoo',
     instagramUrl: 'https://www.instagram.com/joshualeetattoo/',
     instagramProfileUrl: 'https://www.instagram.com/joshualeetattoo/',
@@ -136,7 +141,7 @@ export const artists: Artist[] = [
     ],
     instagramPostUrls: [],
     instagramFeedEmbedUrl: '',
-    specialties: ['Florals', 'Fine Line', 'Micro Tattoos', 'Botanical', 'Illustrative'],
+    specialties: [],
     isResident: true,
   },
   {
@@ -145,9 +150,8 @@ export const artists: Artist[] = [
     name: 'Kotaro',
     title: 'Artist',
     style: ['Blackwork', 'Lettering', 'Graphic'],
-    bio: 'Kotaro works with bold blackwork, graphic rhythm, and lettering at ZUMBIDO TATTOO in Nakameguro, Tokyo. His pieces are direct, sharp, and built around strong visual impact.',
-    shortBio: 'Graphic blackwork and lettering artist creating sharp, high-impact Tokyo tattoos.',
-    yearsExperience: 7,
+    bio: 'Kotaro is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
+    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
     instagram: '@kotaro_zido',
     instagramUrl: 'https://www.instagram.com/kotaro_zido/',
     instagramProfileUrl: 'https://www.instagram.com/kotaro_zido/',
@@ -160,7 +164,7 @@ export const artists: Artist[] = [
     ],
     instagramPostUrls: [],
     instagramFeedEmbedUrl: '',
-    specialties: ['Lettering', 'Blackwork', 'Graphic Pieces', 'Flash', 'Custom Work'],
+    specialties: [],
     isResident: true,
   },
   {
@@ -169,9 +173,8 @@ export const artists: Artist[] = [
     name: 'Echo',
     title: 'Artist',
     style: ['Fine Line', 'Ornamental', 'Minimalist'],
-    bio: 'Echo creates refined fine line and ornamental tattoos at ZUMBIDO TATTOO in Nakameguro, Tokyo, with a focus on clean placement, quiet detail, and lasting balance.',
-    shortBio: 'Fine line and ornamental artist focused on quiet detail and clean placement.',
-    yearsExperience: 6,
+    bio: 'Echo is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
+    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
     instagram: '@echo_tatt',
     instagramUrl: 'https://www.instagram.com/echo_tatt/',
     instagramProfileUrl: 'https://www.instagram.com/echo_tatt/',
@@ -184,7 +187,7 @@ export const artists: Artist[] = [
     ],
     instagramPostUrls: [],
     instagramFeedEmbedUrl: '',
-    specialties: ['Fine Line', 'Ornamental', 'Minimalist', 'Small Pieces', 'Botanical'],
+    specialties: [],
     isResident: true,
   },
   {
@@ -193,9 +196,8 @@ export const artists: Artist[] = [
     name: 'Morgan',
     title: 'Artist',
     style: ['Illustrative', 'Blackwork', 'Dark Art'],
-    bio: 'Morgan brings illustrative blackwork and dark art sensibility to ZUMBIDO TATTOO in Nakameguro, Tokyo, shaping tattoos with atmosphere, texture, and editorial restraint.',
-    shortBio: 'Illustrative blackwork artist shaping atmospheric tattoos with dark editorial restraint.',
-    yearsExperience: 5,
+    bio: 'Morgan is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
+    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
     instagram: '@morgantat2',
     instagramUrl: 'https://www.instagram.com/morgantat2/',
     instagramProfileUrl: 'https://www.instagram.com/morgantat2/',
@@ -208,7 +210,7 @@ export const artists: Artist[] = [
     ],
     instagramPostUrls: [],
     instagramFeedEmbedUrl: '',
-    specialties: ['Illustrative', 'Blackwork', 'Dark Art', 'Texture', 'Custom Pieces'],
+    specialties: [],
     isResident: true,
   },
 ];

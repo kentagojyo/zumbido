@@ -16,7 +16,7 @@ export function ArtistsSection() {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Meet the artists behind ZUMBIDO TATTOO. Each brings a unique vision,
-            a personal rhythm, and mastery of their craft to our Nakameguro studio.
+            a personal rhythm, and a distinct point of view to our Nakameguro studio.
           </p>
         </div>
 
@@ -65,9 +65,6 @@ export function ArtistsSection() {
                         {artist.title}
                       </p>
                     </div>
-                    <span className="shrink-0 border-l border-primary/30 pl-3 text-xs text-primary/75 uppercase tracking-wider">
-                      {artist.yearsExperience}+ yrs
-                    </span>
                   </div>
 
                   <p className="mt-6 text-sm leading-7 text-muted-foreground">

@@ -15,6 +15,46 @@ interface PageProps {
   params: Promise<{ slug: string }>
 }
 
+function InstagramPostFallback({
+  artistName,
+  index,
+  postUrl,
+}: {
+  artistName: string
+  index: number
+  postUrl?: string
+}) {
+  return (
+    <div className="flex h-full min-h-[360px] flex-col justify-between bg-background p-6 text-left">
+      <div className="flex items-center justify-between">
+        <span className="font-serif text-5xl text-foreground/10">
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        <Instagram className="h-5 w-5 text-primary/70" />
+      </div>
+      <div>
+        <p className="text-xs uppercase tracking-[0.24em] text-primary/80">
+          Instagram Work
+        </p>
+        <p className="mt-4 text-sm leading-7 text-muted-foreground">
+          View this selected piece from {artistName} directly on Instagram.
+        </p>
+        {postUrl && (
+          <Link
+            href={postUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary transition-colors hover:text-primary/75"
+          >
+            <Instagram className="h-4 w-4" />
+            View on Instagram
+          </Link>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export async function generateStaticParams() {
   return artists.map((artist) => ({
     slug: artist.slug,
@@ -82,9 +122,9 @@ export default async function ArtistPage({ params }: PageProps) {
 
   const relatedArtists = artists.filter((a) => a.id !== artist.id && a.isResident).slice(0, 3)
   const instagramPostUrls = artist.instagramPostUrls.slice(0, 9)
-  const instagramSlotCount = Math.max(6, instagramPostUrls.length)
-  const instagramSlots = Array.from({ length: instagramSlotCount }, (_, index) => instagramPostUrls[index])
   const hasInstagramPosts = instagramPostUrls.length > 0
+  const instagramSlotCount = hasInstagramPosts ? instagramPostUrls.length : 6
+  const instagramSlots = Array.from({ length: instagramSlotCount }, (_, index) => instagramPostUrls[index])
   const instagramProfileUrl = artist.instagramProfileUrl || artist.instagramUrl
   const instagramFeedEmbed = artist.instagramFeedEmbedUrl || artist.instagramFeedEmbed
   const hasInstagramFeedEmbed = Boolean(instagramFeedEmbed)
@@ -268,7 +308,7 @@ export default async function ArtistPage({ params }: PageProps) {
                   Latest Instagram Work
                 </h2>
                 <p className="mt-4 max-w-2xl text-muted-foreground">
-                  Hand-selected Instagram work from {artist.name}. Add a LightWidget feed URL or post URLs in the artist data file to publish embedded work here.
+                  A curated selection of recent work from {artist.name}, kept image-first with direct links to the original posts.
                 </p>
               </div>
             </div>
@@ -284,44 +324,29 @@ export default async function ArtistPage({ params }: PageProps) {
                 />
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {instagramSlots.map((postUrl, index) => (
                   <article
                     key={postUrl ?? `instagram-placeholder-${index}`}
-                    className="min-h-[420px] overflow-hidden border border-border/70 bg-card/70 transition-colors hover:border-primary/40"
+                    className="group overflow-hidden border border-border/70 bg-card/70 transition-colors hover:border-primary/40"
                   >
                     {postUrl ? (
-                      <blockquote
-                        className="instagram-media h-full w-full bg-background p-4"
-                        data-instgrm-permalink={postUrl}
-                        data-instgrm-version="14"
-                      >
-                        <Link
-                          href={postUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex min-h-[380px] items-center justify-center text-center text-sm uppercase tracking-[0.2em] text-primary transition-colors hover:text-primary/80"
+                      <div className="relative aspect-[4/5] overflow-hidden bg-background">
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                        <blockquote
+                          className="instagram-media h-full w-full bg-background [&_iframe]:!m-0 [&_iframe]:!min-w-0 [&_iframe]:!max-w-none [&_iframe]:!w-full [&_iframe]:!-translate-y-14"
+                          data-instgrm-permalink={postUrl}
+                          data-instgrm-version="14"
                         >
-                          View this post on Instagram
-                        </Link>
-                      </blockquote>
-                    ) : (
-                      <div className="flex min-h-[420px] flex-col justify-between p-6">
-                        <div className="flex items-center justify-between">
-                          <span className="font-serif text-5xl text-foreground/10">
-                            {String(index + 1).padStart(2, '0')}
-                          </span>
-                          <Instagram className="h-5 w-5 text-primary/70" />
-                        </div>
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.24em] text-primary/80">
-                            Awaiting Post URL
-                          </p>
-                          <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                            Add an Instagram post URL to {artist.name}&apos;s `instagramPostUrls` array in `lib/data.ts` to embed work in this slot.
-                          </p>
-                        </div>
+                          <InstagramPostFallback
+                            artistName={artist.name}
+                            index={index}
+                            postUrl={postUrl}
+                          />
+                        </blockquote>
                       </div>
+                    ) : (
+                      <InstagramPostFallback artistName={artist.name} index={index} />
                     )}
                   </article>
                 ))}

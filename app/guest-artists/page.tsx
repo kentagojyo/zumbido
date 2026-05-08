@@ -8,12 +8,33 @@ import { Button } from '@/components/ui/button'
 import { guestArtists } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Guest Artists | ZUMBIDO TATTOO - International Tattoo Artists in Tokyo',
-  description: 'World-class international tattoo artists visiting ZUMBIDO TATTOO in Nakameguro, Tokyo for limited guest spots. Book your appointment with visiting artists from around the world.',
-  keywords: ['guest tattoo artist tokyo', 'international tattoo artist japan', 'visiting tattoo artist tokyo', 'nakameguro guest spot'],
+  title: 'Guest Artists in Tokyo',
+  description:
+    'Guest Artists in Tokyo at ZUMBIDO TATTOO, a premium Nakameguro Tattoo studio welcoming international artists and English-friendly clients.',
+  keywords: ['Guest Artists in Tokyo', 'guest tattoo artist Tokyo', 'international tattoo artist Japan', 'Nakameguro guest spot'],
+  alternates: {
+    canonical: 'https://zumbidotattoo.com/guest-artists',
+  },
   openGraph: {
-    title: 'Guest Artists | ZUMBIDO TATTOO Tokyo',
-    description: 'International tattoo artists visiting our Nakameguro studio for limited engagements.',
+    title: 'Guest Artists in Tokyo | ZUMBIDO TATTOO',
+    description:
+      'International tattoo artists visiting our Nakameguro studio for limited engagements in Tokyo.',
+    url: 'https://zumbidotattoo.com/guest-artists',
+    images: [
+      {
+        url: 'https://zumbidotattoo.com/images/guests/marcus.jpg',
+        width: 1024,
+        height: 1024,
+        alt: 'Guest artist at ZUMBIDO TATTOO in Tokyo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Guest Artists in Tokyo | ZUMBIDO TATTOO',
+    description:
+      'Limited guest artist residencies at an English-friendly Tokyo Tattoo Studio in Nakameguro.',
+    images: ['https://zumbidotattoo.com/images/guests/marcus.jpg'],
   },
 }
 
@@ -45,9 +66,9 @@ export default function GuestArtistsPage() {
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 ZUMBIDO TATTOO welcomes world-class tattoo artists from around the globe 
-                for limited residencies at our Nakameguro, Tokyo studio. These guest spots 
-                offer a rare opportunity to get tattooed by international masters without 
-                leaving Japan.
+                for limited residencies at our Nakameguro, Tokyo studio. These Guest Artists
+                in Tokyo offer a rare opportunity to get tattooed by international masters
+                without leaving Japan.
               </p>
             </div>
           </div>

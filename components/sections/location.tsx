@@ -7,7 +7,6 @@ export function LocationSection() {
   return (
     <section id="access" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4 block">
             Find Us
@@ -16,13 +15,13 @@ export function LocationSection() {
             Location & Access
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Located in the artistic neighborhood of Nakameguro, Tokyo — 
-            easily accessible and surrounded by cafés, galleries, and creative spaces.
+            Located in the artistic neighborhood of Nakameguro, Tokyo. Our Tokyo Tattoo
+            Studio is easy to reach and welcomes local clients, inbound visitors, and
+            English-friendly tattoo consultations.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-w-0">
-          {/* Map */}
           <div className="relative min-h-[360px] w-full max-w-full min-w-0 overflow-hidden border border-border bg-secondary sm:min-h-[420px] lg:h-full">
             <iframe
               src={studioInfo.mapEmbedUrl}
@@ -33,16 +32,16 @@ export function LocationSection() {
               allowFullScreen
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none" />
-            
+
             <div className="absolute bottom-6 left-6 right-6">
-              <Button 
-                asChild 
-                variant="outline" 
+              <Button
+                asChild
+                variant="outline"
                 className="w-full bg-background/80 backdrop-blur-sm border-border hover:bg-background uppercase tracking-wider text-xs"
               >
-                <Link 
-                  href={studioInfo.mapUrl} 
-                  target="_blank" 
+                <Link
+                  href={studioInfo.mapUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <MapPin className="w-4 h-4 mr-2" />
@@ -53,9 +52,7 @@ export function LocationSection() {
             </div>
           </div>
 
-          {/* Info */}
           <div className="flex flex-col justify-center min-w-0">
-            {/* Address */}
             <div className="mb-8 pb-8 border-b border-border">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center shrink-0">
@@ -72,7 +69,6 @@ export function LocationSection() {
               </div>
             </div>
 
-            {/* Access */}
             <div className="mb-8 pb-8 border-b border-border">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center shrink-0">
@@ -92,7 +88,6 @@ export function LocationSection() {
               </div>
             </div>
 
-            {/* Hours */}
             <div className="mb-8 pb-8 border-b border-border">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center shrink-0">
@@ -124,7 +119,6 @@ export function LocationSection() {
               </div>
             </div>
 
-            {/* Contact */}
             <div>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center shrink-0">

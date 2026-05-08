@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Instagram, Mail, ArrowRight, MessageCircle } from 'lucide-react'
+import { Instagram, Mail, ArrowRight, MessageCircle, CalendarCheck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { artists, studioInfo } from '@/lib/data'
 
@@ -12,7 +12,7 @@ const bookingSteps = [
   {
     number: '02',
     title: 'Consultation',
-    description: 'Contact us with your idea, reference images, size, and placement. We\'ll discuss details and provide a quote.',
+    description: 'Tell us your idea, preferred artist, placement, size, and schedule. We can guide you in English or Japanese.',
   },
   {
     number: '03',
@@ -31,12 +31,70 @@ export function BookingSection() {
             Get Inked
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
-            Book Your Appointment
+            Ready to Start Your Next Piece?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your tattoo journey at ZUMBIDO TATTOO in Nakameguro, Tokyo? 
-            Follow these steps to book your session.
+            Tell us your idea, preferred artist, placement, size, and schedule.
+            Our team will guide you through the consultation process in English or Japanese.
           </p>
+        </div>
+
+        <div className="mb-16 overflow-hidden border border-border/70 bg-background">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="relative p-8 md:p-10 lg:p-12">
+              <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-primary/70 via-primary/20 to-transparent" />
+              <span className="text-xs uppercase tracking-[0.3em] text-primary mb-5 block">
+                Private Consultation
+              </span>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground leading-tight">
+                Bring the idea. We will shape the session.
+              </h3>
+              <p className="mt-5 max-w-2xl text-muted-foreground leading-8">
+                Share your references, desired scale, placement, artist preference, and dates.
+                ZUMBIDO TATTOO welcomes inbound visitors with clear English-friendly support.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs px-8 shadow-[0_0_28px_rgba(159,18,57,0.22)]"
+                >
+                  <Link href={`mailto:${studioInfo.email}?subject=Tattoo Consultation Request`}>
+                    <CalendarCheck className="w-4 h-4 mr-2" />
+                    Book a Consultation
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-border hover:bg-secondary uppercase tracking-wider text-xs px-8"
+                >
+                  <Link
+                    href={studioInfo.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Instagram DM
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="border-t border-border/70 bg-secondary/30 p-8 md:p-10 lg:border-l lg:border-t-0">
+              <p className="text-xs uppercase tracking-[0.3em] text-primary mb-6">
+                What to Include
+              </p>
+              <ul className="space-y-4 text-sm text-muted-foreground">
+                {['Tattoo idea and reference images', 'Preferred artist and style direction', 'Placement, approximate size, and available dates'].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 h-px w-5 shrink-0 bg-primary/70" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Booking Steps */}
@@ -97,20 +155,43 @@ export function BookingSection() {
 
         {/* Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Consultation */}
+          <div className="p-8 bg-background border border-border text-center">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CalendarCheck className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="text-xl font-serif font-bold text-foreground mb-2">
+              Book a Consultation
+            </h3>
+            <p className="text-muted-foreground text-sm mb-6">
+              Best for custom work, larger pieces, and inbound visitors who want English-friendly guidance before booking.
+            </p>
+            <Button 
+              asChild 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs w-full md:w-auto"
+            >
+              <Link href={`mailto:${studioInfo.email}?subject=Tattoo Consultation Request`}>
+                <Mail className="w-4 h-4 mr-2" />
+                Book a Consultation
+              </Link>
+            </Button>
+          </div>
+
           {/* Instagram DM */}
           <div className="p-8 bg-background border border-border text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <Instagram className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-xl font-serif font-bold text-foreground mb-2">
-              Instagram DM
+              DM Us on Instagram
             </h3>
             <p className="text-muted-foreground text-sm mb-6">
-              The quickest way to reach us. Send us your ideas and we&apos;ll respond within 24-48 hours.
+              Fastest for quick questions, flash availability, guest spots, and sending visual references.
             </p>
             <Button 
               asChild 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs w-full md:w-auto"
+              variant="outline"
+              className="border-border hover:bg-secondary uppercase tracking-wider text-xs w-full md:w-auto"
             >
               <Link 
                 href={studioInfo.instagramUrl}
@@ -118,30 +199,7 @@ export function BookingSection() {
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
-                Send DM on Instagram
-              </Link>
-            </Button>
-          </div>
-
-          {/* Email */}
-          <div className="p-8 bg-background border border-border text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Mail className="w-8 h-8 text-primary" />
-            </div>
-            <h3 className="text-xl font-serif font-bold text-foreground mb-2">
-              Email Inquiry
-            </h3>
-            <p className="text-muted-foreground text-sm mb-6">
-              For detailed inquiries, larger projects, or if you prefer email communication.
-            </p>
-            <Button 
-              asChild 
-              variant="outline"
-              className="border-border hover:bg-secondary uppercase tracking-wider text-xs w-full md:w-auto"
-            >
-              <Link href={`mailto:${studioInfo.email}`}>
-                <Mail className="w-4 h-4 mr-2" />
-                {studioInfo.email}
+                Instagram DM
               </Link>
             </Button>
           </div>

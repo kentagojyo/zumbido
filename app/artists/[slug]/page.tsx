@@ -31,18 +31,37 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${artist.name} | Tattoo Artist at ZUMBIDO TATTOO, Nakameguro Tokyo`,
-    description: `${artist.shortBio} Book a tattoo appointment with ${artist.name} at ZUMBIDO TATTOO in Nakameguro, Tokyo. Specializing in ${artist.style.join(', ')}.`,
+    title: `${artist.name} | Tattoo Artist in Nakameguro Tokyo`,
+    description: `${artist.shortBio} Book a consultation with ${artist.name} at ZUMBIDO TATTOO, an English-friendly tattoo studio in Tokyo specializing in ${artist.style.join(', ')}.`,
     keywords: [
       `${artist.name} tattoo`,
       ...artist.style.map(s => `${s} tattoo tokyo`),
-      'nakameguro tattoo artist',
-      'tokyo tattoo artist',
+      'Nakameguro Tattoo',
+      'Tokyo Tattoo Studio',
+      'English-friendly tattoo studio in Tokyo',
     ],
+    alternates: {
+      canonical: `https://zumbidotattoo.com/artists/${artist.slug}`,
+    },
     openGraph: {
       title: `${artist.name} | ZUMBIDO TATTOO Tokyo`,
-      description: artist.shortBio,
+      description: `${artist.shortBio} Based at ZUMBIDO TATTOO in Nakameguro, Tokyo.`,
       type: 'profile',
+      url: `https://zumbidotattoo.com/artists/${artist.slug}`,
+      images: [
+        {
+          url: `https://zumbidotattoo.com${artist.profileImage}`,
+          width: 1024,
+          height: 1024,
+          alt: `${artist.name}, tattoo artist at ZUMBIDO TATTOO in Nakameguro, Tokyo`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${artist.name} | ZUMBIDO TATTOO`,
+      description: `${artist.name} at ZUMBIDO TATTOO, a premium Tokyo Tattoo Studio in Nakameguro.`,
+      images: [`https://zumbidotattoo.com${artist.profileImage}`],
     },
   }
 }

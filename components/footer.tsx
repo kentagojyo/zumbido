@@ -19,9 +19,12 @@ export function Footer() {
                 className="h-14 w-auto object-contain object-left drop-shadow-[0_0_18px_rgba(190,18,60,0.36)]"
               />
             </Link>
+            <h2 className="text-lg font-serif font-bold text-foreground">
+              {studioInfo.name}
+            </h2>
             <p className="text-muted-foreground max-w-md leading-relaxed">
-              Underground tattoo studio in the heart of Nakameguro, Tokyo.
-              Crafting bold, dark, and artistic ink since 2010.
+              Underground Nakameguro Tattoo studio in Tokyo. English-friendly
+              consultations, resident artists, guest artists, and bold custom work since 2010.
             </p>
             <div className="flex items-center gap-4 mt-6">
               <Link
@@ -32,6 +35,14 @@ export function Footer() {
               >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
+              </Link>
+              <Link
+                href={studioInfo.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {studioInfo.instagram}
               </Link>
               <Link
                 href={`mailto:${studioInfo.email}`}
@@ -74,7 +85,13 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-                <span>{studioInfo.address}</span>
+                <span>
+                  {studioInfo.name}
+                  <br />
+                  Nakameguro, Tokyo
+                  <br />
+                  {studioInfo.address}
+                </span>
               </li>
               <li>
                 <span className="block font-medium text-foreground">Hours</span>

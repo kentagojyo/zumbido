@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { HeroSection } from '@/components/sections/hero'
@@ -8,6 +9,39 @@ import { WorksSection } from '@/components/sections/works'
 import { BookingSection } from '@/components/sections/booking'
 import { LocationSection } from '@/components/sections/location'
 import { FAQSection } from '@/components/sections/faq'
+
+const siteUrl = 'https://zumbidotattoo.com'
+const ogImage = `${siteUrl}/images/og-zumbido.png`
+
+export const metadata: Metadata = {
+  title: 'Nakameguro Tattoo Studio in Tokyo',
+  description:
+    'ZUMBIDO TATTOO is a premium Tokyo Tattoo Studio in Nakameguro for custom tattoos, resident artists, guest artists, and English-friendly consultations.',
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    title: 'ZUMBIDO TATTOO | Nakameguro Tattoo Studio in Tokyo',
+    description:
+      'Explore resident artists, guest artists, custom work, and English-friendly tattoo support at ZUMBIDO TATTOO in Nakameguro, Tokyo.',
+    url: siteUrl,
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'ZUMBIDO TATTOO social share image with studio atmosphere in Nakameguro, Tokyo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ZUMBIDO TATTOO | Tokyo Tattoo Studio',
+    description:
+      'Premium Nakameguro Tattoo studio with English-friendly consultation support.',
+    images: [ogImage],
+  },
+}
 
 export default function HomePage() {
   return (

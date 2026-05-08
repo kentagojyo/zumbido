@@ -67,7 +67,7 @@ export const artists: Artist[] = [
       '/images/portfolio/megu/work-03.jpg',
       '/images/portfolio/megu/work-04.jpg',
       '/images/portfolio/megu/work-05.jpg',
-      '/images/portfolio/megu/work-06.png',
+      '/images/portfolio/megu/work-06.jpg',
     ],
     instagramPostUrls: [
       'https://www.instagram.com/p/DHCh1OeSeK0/?img_index=1',

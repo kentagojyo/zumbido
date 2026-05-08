@@ -9,6 +9,7 @@ import { Footer } from '@/components/footer'
 import { InstagramFeedEmbed } from '@/components/instagram-feed-embed'
 import { Button } from '@/components/ui/button'
 import { artists } from '@/lib/data'
+import { ogImageUrl, siteUrl } from '@/lib/seo'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -41,19 +42,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'English-friendly tattoo studio in Tokyo',
     ],
     alternates: {
-      canonical: `https://zumbidotattoo.com/artists/${artist.slug}`,
+      canonical: `${siteUrl}/artists/${artist.slug}`,
     },
     openGraph: {
       title: `${artist.name} | ZUMBIDO TATTOO Tokyo`,
       description: `${artist.shortBio} Based at ZUMBIDO TATTOO in Nakameguro, Tokyo.`,
       type: 'profile',
-      url: `https://zumbidotattoo.com/artists/${artist.slug}`,
+      url: `${siteUrl}/artists/${artist.slug}`,
       images: [
         {
-          url: `https://zumbidotattoo.com${artist.profileImage}`,
-          width: 1024,
-          height: 1024,
-          alt: `${artist.name}, tattoo artist at ZUMBIDO TATTOO in Nakameguro, Tokyo`,
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${artist.name} at ZUMBIDO TATTOO, Nakameguro Tokyo tattoo studio`,
         },
       ],
     },
@@ -61,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title: `${artist.name} | ZUMBIDO TATTOO`,
       description: `${artist.name} at ZUMBIDO TATTOO, a premium Tokyo Tattoo Studio in Nakameguro.`,
-      images: [`https://zumbidotattoo.com${artist.profileImage}`],
+      images: [ogImageUrl],
     },
   }
 }

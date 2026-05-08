@@ -123,7 +123,7 @@ export function GuestArtistsPreview() {
             variant="outline" 
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground uppercase tracking-wider text-xs"
           >
-            <Link href="mailto:guests@zumbidotattoo.com">
+            <Link href="mailto:guests@v0-zombido.vercel.app">
               Apply for Guest Spot
             </Link>
           </Button>

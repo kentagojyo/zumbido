@@ -6,6 +6,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import { guestArtists } from '@/lib/data'
+import { ogImageUrl, siteUrl } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Guest Artists in Tokyo',
@@ -13,19 +14,19 @@ export const metadata: Metadata = {
     'Guest Artists in Tokyo at ZUMBIDO TATTOO, a premium Nakameguro Tattoo studio welcoming international artists and English-friendly clients.',
   keywords: ['Guest Artists in Tokyo', 'guest tattoo artist Tokyo', 'international tattoo artist Japan', 'Nakameguro guest spot'],
   alternates: {
-    canonical: 'https://zumbidotattoo.com/guest-artists',
+    canonical: `${siteUrl}/guest-artists`,
   },
   openGraph: {
     title: 'Guest Artists in Tokyo | ZUMBIDO TATTOO',
     description:
       'International tattoo artists visiting our Nakameguro studio for limited engagements in Tokyo.',
-    url: 'https://zumbidotattoo.com/guest-artists',
+    url: `${siteUrl}/guest-artists`,
     images: [
       {
-        url: 'https://zumbidotattoo.com/images/guests/marcus.jpg',
-        width: 1024,
-        height: 1024,
-        alt: 'Guest artist at ZUMBIDO TATTOO in Tokyo',
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: 'ZUMBIDO TATTOO social share image for guest artists in Nakameguro, Tokyo',
       },
     ],
   },
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     title: 'Guest Artists in Tokyo | ZUMBIDO TATTOO',
     description:
       'Limited guest artist residencies at an English-friendly Tokyo Tattoo Studio in Nakameguro.',
-    images: ['https://zumbidotattoo.com/images/guests/marcus.jpg'],
+    images: [ogImageUrl],
   },
 }
 
@@ -274,7 +275,7 @@ export default function GuestArtistsPage() {
                 asChild 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs"
               >
-                <Link href="mailto:guests@zumbidotattoo.com">
+                <Link href="mailto:guests@v0-zombido.vercel.app">
                   <Mail className="w-4 h-4 mr-2" />
                   Apply for Guest Spot
                 </Link>

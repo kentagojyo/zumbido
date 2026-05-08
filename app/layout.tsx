@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { GoogleAnalytics } from '@/components/google-analytics'
+import { ogImageUrl, siteUrl } from '@/lib/seo'
 import './globals.css'
 
 const inter = Inter({
@@ -13,9 +14,6 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
 })
-
-const siteUrl = 'https://zumbidotattoo.com'
-const ogImage = `${siteUrl}/images/og-zumbido.png`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -62,7 +60,7 @@ export const metadata: Metadata = {
       'A dark, premium Tokyo Tattoo Studio in Nakameguro with resident artists, guest artists, and English-friendly consultation support.',
     images: [
       {
-        url: ogImage,
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: 'ZUMBIDO TATTOO Open Graph image for an underground tattoo studio in Nakameguro, Tokyo',
@@ -74,7 +72,7 @@ export const metadata: Metadata = {
     title: 'ZUMBIDO TATTOO | Nakameguro Tattoo Studio',
     description:
       'Premium Tokyo Tattoo Studio in Nakameguro with English-friendly support and guest artists.',
-    images: [ogImage],
+    images: [ogImageUrl],
   },
   robots: {
     index: true,
@@ -127,7 +125,7 @@ const localBusinessJsonLd = {
         },
       ],
       priceRange: 'JPY 15000+',
-      image: ogImage,
+      image: ogImageUrl,
       logo: `${siteUrl}/images/zumbido-logo.png`,
       url: siteUrl,
       sameAs: ['https://www.instagram.com/zumbidotattoo'],

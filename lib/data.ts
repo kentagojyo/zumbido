@@ -278,7 +278,7 @@ export const studioInfo = {
   description: 'Bold lines. Dark culture. Tokyo ink.',
   address: '1-2-3 Nakameguro, Meguro-ku, Tokyo 153-0061, Japan',
   phone: '+81-3-XXXX-XXXX',
-  email: 'info@zumbidotattoo.com',
+  email: 'info@v0-zombido.vercel.app',
   instagram: '@zumbidotattoo',
   instagramUrl: 'https://www.instagram.com/zumbidotattoo',
   hours: {

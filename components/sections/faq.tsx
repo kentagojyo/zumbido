@@ -70,10 +70,10 @@ export function FAQSection() {
             </a>
             {' '}or email us at{' '}
             <a 
-              href="mailto:info@zumbidotattoo.com"
+              href="mailto:info@v0-zombido.vercel.app"
               className="text-primary hover:underline"
             >
-              info@zumbidotattoo.com
+              info@v0-zombido.vercel.app
             </a>
           </p>
         </div>

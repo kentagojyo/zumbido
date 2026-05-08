@@ -9,9 +9,7 @@ import { WorksSection } from '@/components/sections/works'
 import { BookingSection } from '@/components/sections/booking'
 import { LocationSection } from '@/components/sections/location'
 import { FAQSection } from '@/components/sections/faq'
-
-const siteUrl = 'https://zumbidotattoo.com'
-const ogImage = `${siteUrl}/images/og-zumbido.png`
+import { ogImageUrl, siteUrl } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Nakameguro Tattoo Studio in Tokyo',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: ogImage,
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: 'ZUMBIDO TATTOO social share image with studio atmosphere in Nakameguro, Tokyo',
@@ -39,7 +37,7 @@ export const metadata: Metadata = {
     title: 'ZUMBIDO TATTOO | Tokyo Tattoo Studio',
     description:
       'Premium Nakameguro Tattoo studio with English-friendly consultation support.',
-    images: [ogImage],
+    images: [ogImageUrl],
   },
 }
 

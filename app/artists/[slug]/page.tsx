@@ -254,30 +254,38 @@ export default async function ArtistPage({ params }: PageProps) {
         {/* Portfolio Grid */}
         <section className="py-16 md:py-24 bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4 block">
-                Portfolio
-              </span>
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
-                Recent Work
-              </h2>
+            <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-[0.7fr_1.3fr] md:items-end">
+              <div>
+                <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4 block">
+                  Portfolio
+                </span>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+                  Recent Work
+                </h2>
+              </div>
+              <p className="max-w-2xl text-sm leading-7 text-muted-foreground md:ml-auto">
+                A curated local image selection for {artist.name}, presented as a clean editorial gallery before the Instagram archive.
+              </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {artist.portfolioImages.map((image, index) => (
-                <div 
+                <div
                   key={index}
-                  className="relative aspect-square bg-secondary group cursor-pointer overflow-hidden"
+                  className="group relative aspect-[4/5] overflow-hidden border border-border/70 bg-secondary"
                 >
                   <Image
                     src={image}
-                    alt={`Recent tattoo work by ${artist.name} at ZUMBIDO TATTOO Tokyo`}
+                    alt={`Curated recent tattoo work ${index + 1} by ${artist.name} at ZUMBIDO TATTOO Tokyo`}
                     fill
-                    sizes="(min-width: 768px) 33vw, 50vw"
-                    className="object-cover gritty-image transition duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover [filter:contrast(1.05)_saturate(0.82)_brightness(0.86)] transition duration-700 group-hover:scale-[1.025] group-hover:[filter:contrast(1.07)_saturate(0.86)_brightness(0.92)]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/78 via-background/10 to-transparent" />
+                  <div className="absolute inset-0 bg-primary/[0.07] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <span className="absolute bottom-4 right-4 font-serif text-4xl text-foreground/20">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                 </div>
               ))}
             </div>

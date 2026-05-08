@@ -43,6 +43,7 @@ export interface FAQ {
 }
 
 const meguInstagramUrl = 'https://www.instagram.com/megumu_weirdo/';
+const yasuInstagramUrl = 'https://www.instagram.com/yapetas/';
 
 export const artists: Artist[] = [
   {
@@ -61,8 +62,12 @@ export const artists: Artist[] = [
     profileImagePosition: 'object-[50%_38%]',
     profileImageTone: '[filter:contrast(1.08)_saturate(0.82)_brightness(0.86)] group-hover:[filter:contrast(1.1)_saturate(0.88)_brightness(0.93)]',
     portfolioImages: [
-      '/images/work-blackwork-01.jpg',
-      '/images/work-lettering-01.jpg',
+      '/images/portfolio/megu/work-01.jpg',
+      '/images/portfolio/megu/work-02.jpg',
+      '/images/portfolio/megu/work-03.jpg',
+      '/images/portfolio/megu/work-04.jpg',
+      '/images/portfolio/megu/work-05.jpg',
+      '/images/portfolio/megu/work-06.png',
     ],
     instagramPostUrls: [
       'https://www.instagram.com/p/DHCh1OeSeK0/?img_index=1',
@@ -70,6 +75,7 @@ export const artists: Artist[] = [
       'https://www.instagram.com/p/CzdklXbyS0s/',
       'https://www.instagram.com/p/DJl8ac5SwXC/?img_index=1',
       'https://www.instagram.com/p/DDZyBCdSZlZ/?img_index=1',
+      'https://www.instagram.com/p/C9WEuTgS7LJ/?img_index=1',
     ],
     instagramFeedEmbedUrl: '',
     specialties: [],
@@ -78,14 +84,15 @@ export const artists: Artist[] = [
   {
     id: '2',
     slug: 'yasu',
-    name: 'Yasu',
+    name: 'YASU',
     title: 'Senior Artist',
-    style: ['Blackwork', 'Geometric', 'Ornamental'],
-    bio: 'Yasu is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
-    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
+    style: ['Tribal', 'Neo-Tribal', 'Abstract', 'Geometric', 'Blackwork', 'Black Ink'],
+    bio: 'YASU is a senior artist at ZUMBIDO TATTOO, known for one-of-a-kind freehand tribal patterns created directly with the body.\n\nHis work continues to evolve through tribal, neo-tribal, abstract, geometric, and black ink tattooing, pushing each composition toward a more personal and instinctive form.\n\nWith over 25 years of experience, YASU’s tattoos are shaped through collaboration with each client. The final work is not only designed by the artist, but brought to life through the person who carries it.\n\nFor booking inquiries, please contact via Instagram DM.',
+    shortBio: 'Senior artist known for freehand tribal, neo-tribal, abstract, geometric, and black ink tattooing.',
+    yearsExperience: 25,
     instagram: '@yapetas',
-    instagramUrl: 'https://www.instagram.com/yapetas/',
-    instagramProfileUrl: 'https://www.instagram.com/yapetas/',
+    instagramUrl: yasuInstagramUrl,
+    instagramProfileUrl: yasuInstagramUrl,
     profileImage: '/images/artists/yas.png',
     profileImagePosition: 'object-[52%_44%]',
     profileImageTone: '[filter:contrast(1.06)_saturate(0.84)_brightness(0.88)] group-hover:[filter:contrast(1.08)_saturate(0.9)_brightness(0.95)]',
@@ -93,7 +100,14 @@ export const artists: Artist[] = [
       '/images/work-lettering-01.jpg',
       '/images/work-blackwork-01.jpg',
     ],
-    instagramPostUrls: [],
+    instagramPostUrls: [
+      'https://www.instagram.com/p/Cjar61IPsW-/',
+      'https://www.instagram.com/p/CaTpBFQllXL/',
+      'https://www.instagram.com/p/CG4791_gUoE/',
+      'https://www.instagram.com/p/CGqYbR6AK3P/',
+      'https://www.instagram.com/p/CAbTtxegU2L/',
+      'https://www.instagram.com/p/B0b-Br5AChE/',
+    ],
     instagramFeedEmbedUrl: '',
     specialties: [],
     isResident: true,

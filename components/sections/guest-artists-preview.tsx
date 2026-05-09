@@ -89,17 +89,24 @@ export function GuestArtistsPreview() {
                 </div>
 
                 <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/60">
-                  <Link
-                    href={guest.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    <Instagram className="w-4 h-4 text-primary" />
-                    <span className="text-sm">{guest.instagram}</span>
-                  </Link>
+                  {guest.instagramUrl && guest.instagram ? (
+                    <Link
+                      href={guest.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      <Instagram className="w-4 h-4 text-primary" />
+                      <span className="text-sm">{guest.instagram}</span>
+                    </Link>
+                  ) : (
+                    <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Instagram className="w-4 h-4 text-primary" />
+                      Guest artist
+                    </span>
+                  )}
                   <Link 
-                    href="/guest-artists"
+                    href={`/guest-artists/${guest.slug}`}
                     className="text-sm text-primary uppercase tracking-wider flex items-center gap-1 hover:gap-2 transition-all"
                   >
                     Book <ArrowRight className="w-4 h-4" />

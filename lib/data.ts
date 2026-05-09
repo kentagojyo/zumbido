@@ -25,13 +25,14 @@ export interface Artist {
 
 export interface GuestArtist {
   id: string;
+  slug: string;
   name: string;
   city: string;
   country: string;
   style: string[];
   visitingDates: string;
-  instagram: string;
-  instagramUrl: string;
+  instagram?: string;
+  instagramUrl?: string;
   profileImage: string;
   status: 'upcoming' | 'past';
   bio?: string;
@@ -246,17 +247,15 @@ export const artists: Artist[] = [
 
 export const guestArtists: GuestArtist[] = [
   {
-    id: 'g1',
-    name: 'Tomas Tomas',
-    city: 'International',
-    country: 'Guest Artist',
-    style: ['Blackwork', 'Illustrative', 'Guest Work'],
+    id: 'kentakenta',
+    slug: 'kentakenta',
+    name: 'KentaKenta',
+    city: 'Tokyo',
+    country: 'Japan',
+    style: ['Guest Artist'],
     visitingDates: 'Limited guest spot',
-    instagram: '@tomastomas108',
-    instagramUrl: 'https://www.instagram.com/tomastomas108/',
-    profileImage: '/images/guests/marcus.jpg',
+    profileImage: '/images/artists/kentakenta.jpg',
     status: 'upcoming',
-    bio: 'Guest artist visiting ZUMBIDO TATTOO for a limited residency in Nakameguro, Tokyo.',
   },
 ];
 

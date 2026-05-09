@@ -128,17 +128,19 @@ export default function GuestArtistsPage() {
                             <Calendar className="w-4 h-4 text-primary shrink-0" />
                             <span>{guest.visitingDates}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <Instagram className="w-4 h-4 text-primary shrink-0" />
-                            <Link 
-                              href={guest.instagramUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:text-primary transition-colors"
-                            >
-                              {guest.instagram}
-                            </Link>
-                          </div>
+                          {guest.instagramUrl && guest.instagram && (
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Instagram className="w-4 h-4 text-primary shrink-0" />
+                              <Link
+                                href={guest.instagramUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-primary transition-colors"
+                              >
+                                {guest.instagram}
+                              </Link>
+                            </div>
+                          )}
                         </div>
 
                         {guest.bio && (
@@ -162,12 +164,8 @@ export default function GuestArtistsPage() {
                           asChild 
                           className="mt-6 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs w-full sm:w-auto"
                         >
-                          <Link 
-                            href={guest.instagramUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Book via Instagram
+                          <Link href={`/guest-artists/${guest.slug}`}>
+                            View Guest Artist
                           </Link>
                         </Button>
                       </div>

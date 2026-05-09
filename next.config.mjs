@@ -4,7 +4,7 @@ const contentSecurityPolicy = [
   "object-src 'none'",
   "form-action 'self'",
   "frame-ancestors 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://elfsightcdn.com https://www.instagram.com",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://elfsightcdn.com https://static.elfsight.com https://apps.elfsight.com https://www.instagram.com",
   "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://vitals.vercel-insights.com https://*.vercel-insights.com https://core.service.elfsight.com https://*.elfsight.com https://elfsightcdn.com https://static.elfsight.com https://apps.elfsight.com",
   "img-src 'self' data: blob: https:",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",

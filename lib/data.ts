@@ -297,11 +297,17 @@ export const faqs: FAQ[] = [
 ];
 
 export const portfolioImages = [
-  { id: 'p1', src: '/images/work-blackwork-01.jpg', artist: 'ZUMBIDO TATTOO', style: 'Blackwork' },
-  { id: 'p2', src: '/images/work-lettering-01.jpg', artist: 'ZUMBIDO TATTOO', style: 'Lettering' },
-  { id: 'p3', src: '/images/portfolio/hana-1.jpg', artist: 'Hana Kim', style: 'Fine Line' },
-  { id: 'p4', src: '/images/portfolio/hana-2.jpg', artist: 'Hana Kim', style: 'Botanical' },
-  { id: 'p5', src: '/images/portfolio/hana-3.jpg', artist: 'Hana Kim', style: 'Fine Line' },
+  { id: 'p1', src: '/images/portfolio/home/work-01.jpg', artist: 'Megu', style: 'Traditional' },
+  { id: 'p2', src: '/images/portfolio/home/work-02.jpg', artist: 'Megu', style: 'Japanese Traditional' },
+  { id: 'p3', src: '/images/portfolio/home/work-03.jpg', artist: 'Yas', style: 'Blackwork' },
+  { id: 'p4', src: '/images/portfolio/home/tribal-01.jpg', artist: 'Yas', style: 'Neo-Tribal' },
+  { id: 'p5', src: '/images/portfolio/home/tribal-02.jpg', artist: 'Yas', style: 'Neo-Tribal' },
+  { id: 'p6', src: '/images/portfolio/home/tribal-03.jpg', artist: 'Yas', style: 'Neo-Tribal' },
+  { id: 'p7', src: '/images/portfolio/home/tribal-04.jpg', artist: 'Yas', style: 'Neo-Tribal' },
+  { id: 'p8', src: '/images/portfolio/home/tribal-05.jpg', artist: 'Yas', style: 'Neo-Tribal' },
+  { id: 'p9', src: '/images/portfolio/home/tribal-06.jpg', artist: 'Yas', style: 'Neo-Tribal' },
+  { id: 'p10', src: '/images/portfolio/home/work-05.jpg', artist: 'Morgan', style: 'Traditional' },
+  { id: 'p11', src: '/images/portfolio/home/work-06.jpg', artist: 'Morgan', style: 'Traditional' },
 ];
 
 export const studioInfo = {

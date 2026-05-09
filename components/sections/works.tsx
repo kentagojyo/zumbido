@@ -8,7 +8,7 @@ import { Instagram, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { portfolioImages } from '@/lib/data'
 
-const filters = ['All', 'Blackwork', 'Lettering', 'Fine Line']
+const filters = ['All', 'Traditional', 'Blackwork', 'Neo-Tribal']
 
 export function WorksSection() {
   const [activeFilter, setActiveFilter] = useState('All')

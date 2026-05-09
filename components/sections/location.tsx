@@ -25,7 +25,7 @@ export function LocationSection() {
           <div className="relative min-h-[360px] w-full max-w-full min-w-0 overflow-hidden border border-border bg-secondary sm:min-h-[420px] lg:h-full">
             <iframe
               src={studioInfo.mapEmbedUrl}
-              title="Google Map showing Nakameguro, Tokyo near ZUMBIDO TATTOO"
+              title="Google Map showing ZUMBIDO TATTOO in Kamimeguro, Tokyo"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="block h-full min-h-[360px] w-full max-w-full border-0 grayscale invert-[0.9] contrast-125 sm:min-h-[420px]"
@@ -64,6 +64,12 @@ export function LocationSection() {
                   </h3>
                   <p className="text-lg font-medium text-foreground">
                     {studioInfo.address}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    {studioInfo.japaneseAddress}
+                  </p>
+                  <p className="text-sm text-primary mt-3">
+                    {studioInfo.category} / Google rating {studioInfo.googleRating} / {studioInfo.googleReviewCount} reviews
                   </p>
                 </div>
               </div>

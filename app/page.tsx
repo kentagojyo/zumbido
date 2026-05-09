@@ -12,14 +12,14 @@ import { FAQSection } from '@/components/sections/faq'
 import { ogImageUrl, siteUrl } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Nakameguro Tattoo Studio in Tokyo',
+  title: 'Zumbido Tattoo Tokyo | Nakameguro Tattoo Studio',
   description:
     'ZUMBIDO TATTOO is a premium Tokyo Tattoo Studio in Nakameguro for custom tattoos, resident artists, guest artists, and English-friendly consultations.',
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: 'ZUMBIDO TATTOO | Nakameguro Tattoo Studio in Tokyo',
+    title: 'Zumbido Tattoo Tokyo | Nakameguro Tattoo Studio',
     description:
       'Explore resident artists, guest artists, custom work, and English-friendly tattoo support at ZUMBIDO TATTOO in Nakameguro, Tokyo.',
     url: siteUrl,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZUMBIDO TATTOO | Tokyo Tattoo Studio',
+    title: 'Zumbido Tattoo Tokyo | Nakameguro Tattoo Studio',
     description:
       'Premium Nakameguro Tattoo studio with English-friendly consultation support.',
     images: [ogImageUrl],

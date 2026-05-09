@@ -18,8 +18,8 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'ZUMBIDO TATTOO | Nakameguro Tattoo Studio in Tokyo',
-    template: '%s | ZUMBIDO TATTOO',
+    default: 'Zumbido Tattoo Tokyo | Nakameguro Tattoo Studio',
+    template: '%s | Zumbido Tattoo Tokyo',
   },
   description:
     'ZUMBIDO TATTOO is a premium Nakameguro Tattoo and Tokyo Tattoo Studio for custom work, guest artists, and English-friendly tattoo consultations in Tokyo.',
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    siteName: 'ZUMBIDO TATTOO',
-    title: 'ZUMBIDO TATTOO | Nakameguro Tattoo Studio in Tokyo',
+    siteName: 'Zumbido Tattoo Tokyo',
+    title: 'Zumbido Tattoo Tokyo | Nakameguro Tattoo Studio',
     description:
       'A dark, premium Tokyo Tattoo Studio in Nakameguro with resident artists, guest artists, and English-friendly consultation support.',
     images: [
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZUMBIDO TATTOO | Nakameguro Tattoo Studio',
+    title: 'Zumbido Tattoo Tokyo | Nakameguro Tattoo Studio',
     description:
       'Premium Tokyo Tattoo Studio in Nakameguro with English-friendly support and guest artists.',
     images: [ogImageUrl],
@@ -92,16 +92,19 @@ const localBusinessJsonLd = {
     {
       '@type': ['LocalBusiness', 'TattooParlor'],
       '@id': `${siteUrl}/#studio`,
-      name: 'ZUMBIDO TATTOO',
-      alternateName: 'Zumbido Tattoo Nakameguro',
+      name: 'Zumbido Tattoo Tokyo',
+      alternateName: 'ZUMBIDO TATTOO',
+      additionalType: 'https://schema.org/TattooParlor',
       description:
         'Premium Nakameguro Tattoo and Tokyo Tattoo Studio offering custom tattoo work, guest artists, and English-friendly consultations in Tokyo.',
+      keywords: ['Tattoo Shop', 'Nakameguro Tattoo', 'Tokyo Tattoo Studio'],
+      telephone: '+81-3-6413-8996',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: '1-2-3 Nakameguro',
+        streetAddress: '1-10-3 Kamimeguro 3F',
         addressLocality: 'Meguro-ku',
         addressRegion: 'Tokyo',
-        postalCode: '153-0061',
+        postalCode: '153-0051',
         addressCountry: 'JP',
       },
       areaServed: ['Nakameguro', 'Tokyo', 'Japan'],
@@ -125,6 +128,11 @@ const localBusinessJsonLd = {
         },
       ],
       priceRange: 'JPY 15000+',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        reviewCount: 72,
+      },
       image: ogImageUrl,
       logo: `${siteUrl}/images/zumbido-logo.png`,
       url: siteUrl,
@@ -137,7 +145,7 @@ const localBusinessJsonLd = {
     {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
-      name: 'ZUMBIDO TATTOO',
+      name: 'Zumbido Tattoo Tokyo',
       url: siteUrl,
       publisher: {
         '@id': `${siteUrl}/#studio`,

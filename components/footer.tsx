@@ -88,9 +88,11 @@ export function Footer() {
                 <span>
                   {studioInfo.name}
                   <br />
-                  Nakameguro, Tokyo
-                  <br />
                   {studioInfo.address}
+                  <br />
+                  {studioInfo.japaneseAddress}
+                  <br />
+                  {studioInfo.phone}
                 </span>
               </li>
               <li>

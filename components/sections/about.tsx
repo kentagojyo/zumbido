@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { consultationLanguages } from '@/lib/data'
 
 export function AboutSection() {
   return (
@@ -67,8 +68,17 @@ export function AboutSection() {
                 </span>
               </div>
               <div>
-                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">EN/JP</span>
-                <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-1">
+                <div className="flex flex-wrap gap-2">
+                  {consultationLanguages.map((language) => (
+                    <span
+                      key={language}
+                      className="border border-primary/30 bg-primary/5 px-2 py-1 text-xs font-serif font-bold text-primary"
+                    >
+                      {language}
+                    </span>
+                  ))}
+                </div>
+                <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-2">
                   Consultation
                 </span>
               </div>

@@ -12,7 +12,7 @@ const bookingSteps = [
   {
     number: '02',
     title: 'Consultation',
-    description: 'Tell us your idea, preferred artist, placement, size, and schedule. We can guide you in English or Japanese.',
+    description: 'Tell us your idea, preferred artist, placement, size, and schedule. We can guide you in English, Chinese, German, or body language.',
   },
   {
     number: '03',
@@ -35,7 +35,7 @@ export function BookingSection() {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Tell us your idea, preferred artist, placement, size, and schedule.
-            Our team will guide you through the consultation process in English or Japanese.
+            Our team will guide you through the consultation process in English, Chinese, German, or body language.
           </p>
         </div>
 

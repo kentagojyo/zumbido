@@ -43,6 +43,8 @@ export interface FAQ {
   answer: string;
 }
 
+export const consultationLanguages = ['EN', '中文', 'Deutsch', 'Body Language'];
+
 const meguInstagramUrl = 'https://www.instagram.com/megumu_weirdo/';
 const yasuInstagramUrl = 'https://www.instagram.com/yapetas/';
 
@@ -250,8 +252,8 @@ export const guestArtists: GuestArtist[] = [
     id: 'kentakenta',
     slug: 'kentakenta',
     name: 'KentaKenta',
-    city: 'Tokyo',
-    country: 'Japan',
+    city: 'Los Angeles',
+    country: 'USA',
     style: ['Guest Artist'],
     visitingDates: 'Limited guest spot',
     profileImage: '/images/artists/kentakenta.jpg',

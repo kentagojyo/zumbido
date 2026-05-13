@@ -43,6 +43,18 @@ export interface FAQ {
   answer: string;
 }
 
+export interface StudioEvent {
+  id: string;
+  title: string;
+  type: string;
+  date: string;
+  location: string;
+  description: string;
+  image: string;
+  ctaLabel: string;
+  href: string;
+}
+
 export const consultationLanguages = ['EN', '中文', 'Deutsch', 'Body Language'];
 
 const meguInstagramUrl = 'https://www.instagram.com/megumu_weirdo/';
@@ -147,9 +159,9 @@ export const artists: Artist[] = [
     slug: 'josh',
     name: 'Josh',
     title: 'Artist',
-    style: ['Fine Line', 'Illustrative', 'Botanical'],
-    bio: 'Josh is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
-    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
+    style: ['American Traditional', 'Traditional', 'Classic Tattoo'],
+    bio: 'Josh began his tattoo artist journey in Hong Kong in 2016, focusing mainly on traditional tattooing, particularly American Traditional.\n\nHis work is rooted in strong black outlines, vibrant limited colors, minimal shading, and the classic design language that made American Traditional tattooing timeless.\n\nToday, Josh works between Tokyo and Hong Kong. In Tokyo, he works at ZUMBIDO TATTOO, founded by Megumu-san. In Hong Kong, he works at an international tattoo shop founded by Jimmy Ho.\n\nJosh creates classic, timeless pieces with strong, clean design and character.\n\nFor booking inquiries, please contact via Instagram DM.',
+    shortBio: 'Traditional tattoo artist working between Tokyo and Hong Kong, creating classic American Traditional pieces with strong, clean design and character.',
     instagram: '@joshualeetattoo',
     instagramUrl: 'https://www.instagram.com/joshualeetattoo/',
     instagramProfileUrl: 'https://www.instagram.com/joshualeetattoo/',
@@ -157,10 +169,21 @@ export const artists: Artist[] = [
     profileImagePosition: 'object-[58%_36%]',
     profileImageTone: '[filter:contrast(1.08)_saturate(0.82)_brightness(0.82)] group-hover:[filter:contrast(1.1)_saturate(0.88)_brightness(0.9)]',
     portfolioImages: [
-      '/images/work-lettering-01.jpg',
-      '/images/work-blackwork-01.jpg',
+      '/images/portfolio/josh/work-01.jpg',
+      '/images/portfolio/josh/work-02.jpg',
+      '/images/portfolio/josh/work-03.jpg',
+      '/images/portfolio/josh/work-04.jpg',
+      '/images/portfolio/josh/work-05.jpg',
+      '/images/portfolio/josh/work-06.jpg',
     ],
-    instagramPostUrls: [],
+    instagramPostUrls: [
+      'https://www.instagram.com/p/DWdeM5CEhDx/?img_index=1',
+      'https://www.instagram.com/p/DVpbOorklvN/?img_index=1',
+      'https://www.instagram.com/p/DUw1qRlEifv/',
+      'https://www.instagram.com/p/DUHiV-7knvN/',
+      'https://www.instagram.com/p/DT3-EcFEoWl/?img_index=1',
+      'https://www.instagram.com/p/DSl_6zSkqJ6/',
+    ],
     instagramFeedEmbedUrl: '',
     specialties: [],
     isResident: true,
@@ -258,6 +281,33 @@ export const guestArtists: GuestArtist[] = [
     visitingDates: 'Limited guest spot',
     profileImage: '/images/artists/kentakenta.jpg',
     status: 'upcoming',
+  },
+];
+
+export const studioEvents: StudioEvent[] = [
+  {
+    id: 'popup-event',
+    title: 'Pop Up Event',
+    type: 'Flash / Guest Session',
+    date: 'Dates Announcing Soon',
+    location: 'Nakameguro, Tokyo',
+    description:
+      'Limited pop up sessions, flash work, and guest artist appearances at ZUMBIDO TATTOO. Details will be announced through the studio Instagram.',
+    image: '/images/guest-artist-01.jpg',
+    ctaLabel: 'Follow Updates',
+    href: 'https://www.instagram.com/zumbidotattoo',
+  },
+  {
+    id: 'tattoo-convention',
+    title: 'Tattoo Convention',
+    type: 'Convention / Travel Dates',
+    date: 'Schedule TBA',
+    location: 'Tokyo / International',
+    description:
+      'Upcoming tattoo convention appearances and travel dates from the ZUMBIDO TATTOO collective. Booking windows and artist lineups will be shared as dates are confirmed.',
+    image: '/images/portfolio/home/tribal-01.jpg',
+    ctaLabel: 'Ask Availability',
+    href: '#booking',
   },
 ];
 

@@ -3,6 +3,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { HeroSection } from '@/components/sections/hero'
 import { AboutSection } from '@/components/sections/about'
+import { EventsSection } from '@/components/sections/events'
 import { ArtistsSection } from '@/components/sections/artists'
 import { GuestArtistsPreview } from '@/components/sections/guest-artists-preview'
 import { WorksSection } from '@/components/sections/works'
@@ -48,6 +49,7 @@ export default function HomePage() {
       <main className="noise-overlay">
         <HeroSection />
         <AboutSection />
+        <EventsSection />
         <ArtistsSection />
         <GuestArtistsPreview />
         <WorksSection />

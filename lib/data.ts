@@ -287,27 +287,27 @@ export const guestArtists: GuestArtist[] = [
 export const studioEvents: StudioEvent[] = [
   {
     id: 'popup-event',
-    title: 'Pop Up Event',
-    type: 'Flash / Guest Session',
-    date: 'Dates Announcing Soon',
-    location: 'Nakameguro, Tokyo',
+    title: 'Tattoo Tribe',
+    type: 'Black Weirdos x Loco Mosquito',
+    date: '21-25 May 2026',
+    location: 'TOKYO TRUNK HOTEL',
     description:
-      'Limited pop up sessions, flash work, and guest artist appearances at ZUMBIDO TATTOO. Details will be announced through the studio Instagram.',
-    image: '/images/guest-artist-01.jpg',
+      'Black Weirdos x Loco Mosquito are teaming up for a special event. A rare chance to experience the world of Loco Mosquito up close, with legendary tattoo artists designs, artwork, and special pieces available in one place.',
+    image: '/images/events/popup-event-01.jpg',
     ctaLabel: 'Follow Updates',
     href: 'https://www.instagram.com/zumbidotattoo',
   },
   {
-    id: 'tattoo-convention',
-    title: 'Tattoo Convention',
-    type: 'Convention / Travel Dates',
-    date: 'Schedule TBA',
-    location: 'Tokyo / International',
+    id: 'slackers-party',
+    title: "Slacker's Party",
+    type: 'DJs / Food / Live Tattoo',
+    date: 'Saturday 16 May 2026, 8PM-5AM',
+    location: 'HVEN',
     description:
-      'Upcoming tattoo convention appearances and travel dates from the ZUMBIDO TATTOO collective. Booking windows and artist lineups will be shared as dates are confirmed.',
-    image: '/images/portfolio/home/tribal-01.jpg',
-    ctaLabel: 'Ask Availability',
-    href: '#booking',
+      "ZUMBIDO TATTOO hosts Slacker's Party at HVEN with DJs, food by HATOS BAR, and live tattooing from the ZUMBIDO collective. Door: JPY 2000.",
+    image: '/images/events/popup-event-02.jpg',
+    ctaLabel: 'Follow Updates',
+    href: 'https://www.instagram.com/zumbidotattoo',
   },
 ];
 

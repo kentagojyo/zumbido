@@ -88,7 +88,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse">
+      <div className="pointer-events-none absolute bottom-6 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-2 animate-pulse sm:flex sm:bottom-8 max-h-[760px]:hidden">
         <span className="text-xs uppercase tracking-widest text-foreground/60">Scroll</span>
         <ChevronDown className="w-5 h-5 text-foreground/60" />
       </div>

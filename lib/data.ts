@@ -176,7 +176,7 @@ export const artists: Artist[] = [
     instagram: '@joshualeetattoo',
     instagramUrl: 'https://www.instagram.com/joshualeetattoo/',
     instagramProfileUrl: 'https://www.instagram.com/joshualeetattoo/',
-    profileImage: '/images/artists/joshua.png',
+    profileImage: '/images/artists/joshua.jpg',
     profileImagePosition: 'object-[58%_36%]',
     profileImageTone: '[filter:contrast(1.08)_saturate(0.82)_brightness(0.82)] group-hover:[filter:contrast(1.1)_saturate(0.88)_brightness(0.9)]',
     portfolioImages: [
@@ -256,7 +256,7 @@ export const artists: Artist[] = [
     instagram: '@morgantat2',
     instagramUrl: 'https://www.instagram.com/morgantat2/',
     instagramProfileUrl: 'https://www.instagram.com/morgantat2/',
-    profileImage: '/images/artists/megan.png',
+    profileImage: '/images/artists/mogan.jpg',
     profileImagePosition: 'object-[50%_38%]',
     profileImageTone: '[filter:contrast(1.08)_saturate(0.78)_brightness(0.8)] group-hover:[filter:contrast(1.1)_saturate(0.84)_brightness(0.88)]',
     portfolioImages: [

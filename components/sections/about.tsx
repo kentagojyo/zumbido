@@ -24,18 +24,6 @@ export function AboutSection() {
                 </p>
               </div>
             </div>
-            <div className="absolute -right-4 -bottom-6 hidden w-44 overflow-hidden border border-border bg-background shadow-2xl md:block lg:-right-8">
-              <div className="relative aspect-square">
-                <Image
-                  src="/images/artists/Megu.png"
-                  alt="Tattoo studio detail at ZUMBIDO TATTOO Tokyo"
-                  fill
-                  sizes="176px"
-                  className="object-cover gritty-image"
-                />
-                <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
-              </div>
-            </div>
           </div>
 
           <div>

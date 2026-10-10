@@ -5,7 +5,8 @@ function normalizeSiteUrl(url: string) {
 const temporaryProductionUrl = 'https://v0-zombido.vercel.app'
 
 export const siteUrl = normalizeSiteUrl(
-  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.NEXT_PUBLIC_CANONICAL_URL ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : process.env.VERCEL_URL

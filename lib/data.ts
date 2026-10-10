@@ -359,7 +359,7 @@ export const studioInfo = {
   phone: '03-6413-8996',
   phoneInternational: '+81-3-6413-8996',
   category: 'Tattoo Shop',
-  email: 'blackweirdos.tat@gmail.com',
+  email: 'zumbidotattoo@gmail.com',
   instagram: '@zumbidotattoo',
   instagramUrl: 'https://www.instagram.com/zumbidotattoo',
   hours: { daily: '11:00–21:00', opens: '11:00', closes: '21:00' },
@@ -370,3 +370,4 @@ export const studioInfo = {
   mapUrl: 'https://maps.google.com/?q=ZUMBIDO%20TATTOO%201-10-3%20Kamimeguro%203F%20Meguro-ku%20Tokyo%20153-0051%20Japan',
   mapEmbedUrl: 'https://maps.google.com/maps?q=ZUMBIDO%20TATTOO%201-10-3%20Kamimeguro%203F%20Meguro-ku%20Tokyo%20153-0051%20Japan&t=m&z=16&output=embed',
 };
+

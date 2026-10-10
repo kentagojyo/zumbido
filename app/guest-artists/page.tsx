@@ -5,7 +5,7 @@ import { Instagram, ArrowLeft, MapPin, Calendar, Mail } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
-import { guestArtists } from '@/lib/data'
+import { guestArtists, studioInfo } from '@/lib/data'
 import { ogImageUrl, siteUrl } from '@/lib/seo'
 
 export const metadata: Metadata = {
@@ -83,7 +83,7 @@ export default function GuestArtistsPage() {
                 Upcoming Guest Artists
               </h2>
               <p className="text-muted-foreground mt-2">
-                Book now before spots fill up
+                Contact us for confirmed dates and availability
               </p>
             </div>
 
@@ -273,7 +273,7 @@ export default function GuestArtistsPage() {
                 asChild 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs"
               >
-                <Link href="mailto:guests@v0-zombido.vercel.app">
+                <Link href={`mailto:${studioInfo.email}`}>
                   <Mail className="w-4 h-4 mr-2" />
                   Apply for Guest Spot
                 </Link>

@@ -12,10 +12,12 @@ import { LocationSection } from '@/components/sections/location'
 import { FAQSection } from '@/components/sections/faq'
 import { ogImageUrl, siteUrl } from '@/lib/seo'
 
+export const revalidate = 3600
+
 export const metadata: Metadata = {
   title: 'Zumbido Tattoo Tokyo | Nakameguro Tattoo Studio',
   description:
-    'ZUMBIDO TATTOO is a premium Tokyo Tattoo Studio in Nakameguro for custom tattoos, resident artists, guest artists, and English-friendly consultations.',
+    'ZUMBIDO TATTOO in Nakameguro, Tokyo. Open daily 11:00–21:00. Small tattoos from ¥10,000. Cash, credit cards and QR code payments. Book online or via Instagram DM.',
   alternates: {
     canonical: siteUrl,
   },

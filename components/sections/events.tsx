@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, CalendarDays, MapPin } from 'lucide-react'
-import { studioEvents } from '@/lib/data'
+import { studioEvents, studioInfo } from '@/lib/data'
 
 export function EventsSection() {
+  const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' })
+  const upcomingEvents = studioEvents.filter(event => event.endDate >= today)
   return (
     <section id="events" className="relative overflow-hidden border-y border-border/60 bg-background py-24 md:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(159,18,57,0.16),transparent_32%),linear-gradient(180deg,rgba(0,0,0,0.18),rgba(0,0,0,0.68))]" />
@@ -23,8 +25,9 @@ export function EventsSection() {
           </p>
         </div>
 
+        {upcomingEvents.length === 0 && <p className="text-muted-foreground">New events will be announced on <Link className="text-primary hover:underline" href={studioInfo.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</Link>.</p>}
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-          {studioEvents.map((event, index) => (
+          {upcomingEvents.map((event, index) => (
             <article
               key={event.id}
               className={`group grid overflow-hidden border border-border/70 bg-card/70 transition duration-500 hover:border-primary/45 hover:bg-card md:grid-cols-[0.96fr_1.04fr] ${

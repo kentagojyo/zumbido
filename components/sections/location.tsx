@@ -69,7 +69,7 @@ export function LocationSection() {
                     {studioInfo.japaneseAddress}
                   </p>
                   <p className="text-sm text-primary mt-3">
-                    {studioInfo.category} / Google rating {studioInfo.googleRating} / {studioInfo.googleReviewCount} reviews
+                    {studioInfo.category}
                   </p>
                 </div>
               </div>
@@ -103,24 +103,7 @@ export function LocationSection() {
                   <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">
                     Hours
                   </h3>
-                  <ul className="space-y-1">
-                    <li className="flex justify-between max-w-xs">
-                      <span className="text-muted-foreground">Tue - Fri</span>
-                      <span className="text-foreground">{studioInfo.hours.weekdays}</span>
-                    </li>
-                    <li className="flex justify-between max-w-xs">
-                      <span className="text-muted-foreground">Saturday</span>
-                      <span className="text-foreground">{studioInfo.hours.saturday}</span>
-                    </li>
-                    <li className="flex justify-between max-w-xs">
-                      <span className="text-muted-foreground">Sunday</span>
-                      <span className="text-foreground">{studioInfo.hours.sunday}</span>
-                    </li>
-                    <li className="flex justify-between max-w-xs">
-                      <span className="text-muted-foreground">Monday</span>
-                      <span className="text-primary">{studioInfo.hours.monday}</span>
-                    </li>
-                  </ul>
+<p className="text-foreground">Every day: {studioInfo.hours.daily}</p>
                 </div>
               </div>
             </div>
@@ -134,8 +117,8 @@ export function LocationSection() {
                   <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">
                     Contact
                   </h3>
-                  <p className="text-foreground">{studioInfo.phone}</p>
-                  <p className="text-muted-foreground text-sm mt-1">{studioInfo.email}</p>
+                  <a className="text-foreground hover:text-primary" href={`tel:${studioInfo.phoneInternational}`}>{studioInfo.phone}</a>
+                  <a className="block break-all text-muted-foreground text-sm mt-1 hover:text-primary" href={`mailto:${studioInfo.email}`}>{studioInfo.email}</a>
                 </div>
               </div>
             </div>

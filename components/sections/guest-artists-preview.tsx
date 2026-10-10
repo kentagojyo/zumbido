@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Instagram, ArrowRight, MapPin, Calendar } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { guestArtists } from '@/lib/data'
+import { guestArtists, studioInfo } from '@/lib/data'
 
 export function GuestArtistsPreview() {
   const upcomingGuests = guestArtists.filter(g => g.status === 'upcoming').slice(0, 2)
@@ -34,6 +34,7 @@ export function GuestArtistsPreview() {
           </Button>
         </div>
 
+        {upcomingGuests.length === 0 && <p className="text-muted-foreground">Guest dates are being confirmed. Contact us for current availability.</p>}
         {upcomingGuests.length > 0 && (
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
             {upcomingGuests.map((guest, index) => (
@@ -130,7 +131,7 @@ export function GuestArtistsPreview() {
             variant="outline" 
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground uppercase tracking-wider text-xs"
           >
-            <Link href="mailto:guests@v0-zombido.vercel.app">
+            <Link href={`mailto:${studioInfo.email}`}>
               Apply for Guest Spot
             </Link>
           </Button>

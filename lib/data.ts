@@ -34,7 +34,7 @@ export interface GuestArtist {
   instagram?: string;
   instagramUrl?: string;
   profileImage: string;
-  status: 'upcoming' | 'past';
+  status: 'upcoming' | 'past' | 'unconfirmed';
   bio?: string;
 }
 
@@ -48,6 +48,7 @@ export interface StudioEvent {
   title: string;
   type: string;
   date: string;
+  endDate: string;
   location: string;
   description: string;
   image: string;
@@ -200,36 +201,13 @@ export const artists: Artist[] = [
     isResident: true,
   },
   {
-    id: '5',
-    slug: 'kotaro',
-    name: 'Kotaro',
-    title: 'Artist',
-    style: ['Blackwork', 'Lettering', 'Graphic'],
-    bio: 'Kotaro is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
-    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
-    instagram: '@kotaro_zido',
-    instagramUrl: 'https://www.instagram.com/kotaro_zido/',
-    instagramProfileUrl: 'https://www.instagram.com/kotaro_zido/',
-    profileImage: '/images/artists/kotaro.png',
-    profileImagePosition: 'object-[50%_34%]',
-    profileImageTone: '[filter:contrast(1.08)_saturate(0.72)_brightness(0.82)] group-hover:[filter:contrast(1.1)_saturate(0.78)_brightness(0.9)]',
-    portfolioImages: [
-      '/images/work-lettering-01.jpg',
-      '/images/work-blackwork-01.jpg',
-    ],
-    instagramPostUrls: [],
-    instagramFeedEmbedUrl: '',
-    specialties: [],
-    isResident: true,
-  },
-  {
     id: '6',
     slug: 'echo',
     name: 'Echo',
     title: 'Artist',
     style: ['Fine Line', 'Ornamental', 'Minimalist'],
-    bio: 'Echo is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Confirmed biography, portfolio notes, and preferred booking details can be added here when available.',
-    shortBio: 'Resident artist at ZUMBIDO TATTOO. Biography and portfolio notes will be updated with confirmed details.',
+    bio: 'Echo is a resident artist at ZUMBIDO TATTOO in Nakameguro, Tokyo. Please contact the studio or Echo on Instagram for current work and availability.',
+    shortBio: 'Resident artist at ZUMBIDO TATTOO. Contact Echo for current work and availability.',
     instagram: '@echo_tatt',
     instagramUrl: 'https://www.instagram.com/echo_tatt/',
     instagramProfileUrl: 'https://www.instagram.com/echo_tatt/',
@@ -237,8 +215,7 @@ export const artists: Artist[] = [
     profileImagePosition: 'object-[50%_34%]',
     profileImageTone: '[filter:contrast(1.06)_saturate(0.76)_brightness(0.82)] group-hover:[filter:contrast(1.08)_saturate(0.82)_brightness(0.9)]',
     portfolioImages: [
-      '/images/portfolio/hana-1.jpg',
-      '/images/portfolio/hana-2.jpg',
+
     ],
     instagramPostUrls: [],
     instagramFeedEmbedUrl: '',
@@ -289,9 +266,9 @@ export const guestArtists: GuestArtist[] = [
     city: 'Los Angeles',
     country: 'USA',
     style: ['Guest Artist'],
-    visitingDates: 'Limited guest spot',
+    visitingDates: 'Contact the studio for current availability',
     profileImage: '/images/artists/kentakenta.jpg',
-    status: 'upcoming',
+    status: 'unconfirmed',
   },
 ];
 
@@ -300,7 +277,8 @@ export const studioEvents: StudioEvent[] = [
     id: 'popup-event',
     title: 'Tattoo Tribe',
     type: 'Black Weirdos x Loco Mosquito',
-    date: '21-25 May 2026',
+    date: '21–25 May 2026',
+    endDate: '2026-05-25',
     location: 'TOKYO TRUNK HOTEL',
     description:
       'Black Weirdos x Loco Mosquito are teaming up for a special event. A rare chance to experience the world of Loco Mosquito up close, with legendary tattoo artists designs, artwork, and special pieces available in one place.',
@@ -312,7 +290,8 @@ export const studioEvents: StudioEvent[] = [
     id: 'slackers-party',
     title: "Slacker's Party",
     type: 'DJs / Food / Live Tattoo',
-    date: 'Saturday 16 May 2026, 8PM-5AM',
+    date: '16–17 May 2026',
+    endDate: '2026-05-17',
     location: 'HVEN',
     description:
       "ZUMBIDO TATTOO hosts Slacker's Party at HVEN with DJs, food by HATOS BAR, and live tattooing from the ZUMBIDO collective. Door: JPY 2000.",
@@ -341,15 +320,15 @@ export const faqs: FAQ[] = [
   },
   {
     question: 'What payment methods do you accept?',
-    answer: 'We accept cash (Japanese Yen), major credit cards (Visa, Mastercard, American Express), and various mobile payment options including PayPay and LINE Pay. A deposit is required to secure your booking.',
+    answer: 'We accept cash (Japanese Yen), credit cards, and QR code payments. A deposit of ¥10,000–¥20,000 is required to confirm your booking. Deposits are non-refundable if you cancel.',
   },
   {
     question: 'What is your booking process?',
-    answer: 'Contact us via Instagram DM or our booking form with your idea, preferred artist, size, placement, and available dates. We\'ll respond with availability and pricing. A deposit (typically 10,000-30,000 JPY depending on the project) confirms your appointment.',
+    answer: 'Contact us via Instagram DM or our booking form with your idea, preferred artist, size, placement, and available dates. We\'ll respond with availability and pricing. A deposit of ¥10,000–¥20,000 confirms your appointment. Deposits are non-refundable if you cancel. Sending an inquiry does not confirm a booking.',
   },
   {
     question: 'How much do tattoos cost?',
-    answer: 'Pricing varies based on size, complexity, placement, and artist. Small pieces start around 15,000 JPY, while larger custom work is quoted individually. We provide detailed quotes after consultation. All prices include aftercare instructions and products.',
+    answer: 'Pricing varies based on size, complexity, placement, and artist. Small tattoos start from ¥10,000. Larger custom work is quoted individually after consultation.',
   },
   {
     question: 'What styles do you specialize in?',
@@ -376,20 +355,18 @@ export const studioInfo = {
   tagline: 'Underground Tattoo Studio in Nakameguro, Tokyo',
   description: 'Bold lines. Dark culture. Tokyo ink.',
   address: '1-10-3 Kamimeguro 3F, Meguro-ku, Tokyo 153-0051, Japan',
-  japaneseAddress: '〒153-0051 東京都目黒区上目黒1丁目10-3 3F',
-  phone: '+81 3-6413-8996',
+  japaneseAddress: '〒153-0051 東京都目黒区上目黒1-10-3 3F',
+  phone: '03-6413-8996',
+  phoneInternational: '+81-3-6413-8996',
   category: 'Tattoo Shop',
-  googleRating: '5.0',
-  googleReviewCount: 72,
-  email: 'info@v0-zombido.vercel.app',
+  email: 'blackweirdos.tat@gmail.com',
   instagram: '@zumbidotattoo',
   instagramUrl: 'https://www.instagram.com/zumbidotattoo',
-  hours: {
-    weekdays: '12:00 PM - 9:00 PM',
-    saturday: '11:00 AM - 8:00 PM',
-    sunday: 'By Appointment Only',
-    monday: 'Closed',
-  },
+  hours: { daily: '11:00–21:00', opens: '11:00', closes: '21:00' },
+  smallTattooMinimum: 10000,
+  deposit: '¥10,000–¥20,000',
+  cancellationPolicy: 'Deposits are non-refundable if you cancel.',
+  paymentMethods: 'Cash, credit cards, and QR code payments',
   mapUrl: 'https://maps.google.com/?q=ZUMBIDO%20TATTOO%201-10-3%20Kamimeguro%203F%20Meguro-ku%20Tokyo%20153-0051%20Japan',
   mapEmbedUrl: 'https://maps.google.com/maps?q=ZUMBIDO%20TATTOO%201-10-3%20Kamimeguro%203F%20Meguro-ku%20Tokyo%20153-0051%20Japan&t=m&z=16&output=embed',
 };

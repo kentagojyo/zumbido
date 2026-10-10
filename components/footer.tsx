@@ -65,6 +65,7 @@ export function Footer() {
                 { name: 'Works', href: '/#works' },
                 { name: 'Booking', href: '/#booking' },
                 { name: 'FAQ', href: '/#faq' },
+                { name: 'Privacy Notice', href: '/privacy' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -97,10 +98,7 @@ export function Footer() {
               </li>
               <li>
                 <span className="block font-medium text-foreground">Hours</span>
-                <span className="block">Tue-Fri: {studioInfo.hours.weekdays}</span>
-                <span className="block">Sat: {studioInfo.hours.saturday}</span>
-                <span className="block">Sun: {studioInfo.hours.sunday}</span>
-                <span className="block text-primary">Mon: {studioInfo.hours.monday}</span>
+<span className="block">Every day: {studioInfo.hours.daily}</span>
               </li>
             </ul>
           </div>

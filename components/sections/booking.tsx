@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { BookingForm } from '@/components/booking-form'
+import { siteUrl } from '@/lib/seo'
 import { Instagram, Mail, ArrowRight, MessageCircle, CalendarCheck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { artists, studioInfo } from '@/lib/data'
@@ -59,7 +61,7 @@ export function BookingSection() {
                   size="lg"
                   className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs px-8 shadow-[0_0_28px_rgba(159,18,57,0.22)]"
                 >
-                  <Link href={`mailto:${studioInfo.email}?subject=Tattoo Consultation Request`}>
+                  <Link href="#booking-form">
                     <CalendarCheck className="w-4 h-4 mr-2" />
                     Book a Consultation
                   </Link>
@@ -153,6 +155,8 @@ export function BookingSection() {
           </div>
         </div>
 
+        <div className="mb-16"><BookingForm returnUrl={`${siteUrl}/booking/thanks`} /></div>
+
         {/* Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Consultation */}
@@ -170,7 +174,7 @@ export function BookingSection() {
               asChild 
               className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs w-full md:w-auto"
             >
-              <Link href={`mailto:${studioInfo.email}?subject=Tattoo Consultation Request`}>
+              <Link href="#booking-form">
                 <Mail className="w-4 h-4 mr-2" />
                 Book a Consultation
               </Link>
@@ -208,7 +212,7 @@ export function BookingSection() {
         {/* Note */}
         <p className="text-center text-xs text-muted-foreground mt-8 max-w-xl mx-auto">
           Please include: your tattoo idea, preferred artist, size &amp; placement, 
-          reference images, and your available dates. A deposit is required to confirm bookings.
+          reference images, and your available dates. Deposit: {studioInfo.deposit}. {studioInfo.cancellationPolicy}
         </p>
       </div>
     </section>

@@ -241,8 +241,8 @@ export default async function ArtistPage({ params }: PageProps) {
                     variant="outline"
                     className="border-border hover:bg-secondary uppercase tracking-wider text-xs"
                   >
-                    <Link href="/#booking">
-                      Other Booking Options
+                    <Link href="/#booking-form">
+                      Booking Form
                     </Link>
                   </Button>
                 </div>
@@ -252,7 +252,7 @@ export default async function ArtistPage({ params }: PageProps) {
         </section>
 
         {/* Portfolio Grid */}
-        <section className="py-16 md:py-24 bg-card">
+        {artist.portfolioImages.length > 0 && <section className="py-16 md:py-24 bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-[0.7fr_1.3fr] md:items-end">
               <div>
@@ -264,7 +264,7 @@ export default async function ArtistPage({ params }: PageProps) {
                 </h2>
               </div>
               <p className="max-w-2xl text-sm leading-7 text-muted-foreground md:ml-auto">
-                A curated local image selection for {artist.name}, presented as a clean editorial gallery before the Instagram archive.
+                Selected tattoo work by {artist.name}. Contact the artist to discuss your own piece.
               </p>
             </div>
 
@@ -302,7 +302,7 @@ export default async function ArtistPage({ params }: PageProps) {
               </Link>
             </div>
           </div>
-        </section>
+        </section>}
 
         {/* Instagram Portfolio */}
         <section className="py-16 md:py-24">

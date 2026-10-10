@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { consultationLanguages } from '@/lib/data'
+import { artists, consultationLanguages } from '@/lib/data'
 
 export function AboutSection() {
   return (
@@ -62,7 +62,7 @@ export function AboutSection() {
 
             <div className="grid grid-cols-3 gap-6 sm:gap-8 mt-14 pt-9 border-t border-border">
               <div>
-                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">7</span>
+                <span className="text-3xl md:text-4xl font-serif font-bold text-primary">{artists.filter(artist => artist.isResident).length}</span>
                 <span className="block text-xs uppercase tracking-wider text-muted-foreground mt-1">
                   Resident Artists
                 </span>

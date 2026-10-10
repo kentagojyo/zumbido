@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { ogImageUrl, siteUrl } from '@/lib/seo'
+import { studioInfo } from '@/lib/data'
 import './globals.css'
 
 const inter = Inter({
@@ -92,13 +93,14 @@ const localBusinessJsonLd = {
     {
       '@type': ['LocalBusiness', 'TattooParlor'],
       '@id': `${siteUrl}/#studio`,
-      name: 'Zumbido Tattoo Tokyo',
+      name: studioInfo.name,
       alternateName: 'ZUMBIDO TATTOO',
       additionalType: 'https://schema.org/TattooParlor',
       description:
         'Premium Nakameguro Tattoo and Tokyo Tattoo Studio offering custom tattoo work, guest artists, and English-friendly consultations in Tokyo.',
       keywords: ['Tattoo Shop', 'Nakameguro Tattoo', 'Tokyo Tattoo Studio'],
-      telephone: '+81-3-6413-8996',
+      telephone: studioInfo.phoneInternational,
+      email: studioInfo.email,
       address: {
         '@type': 'PostalAddress',
         streetAddress: '1-10-3 Kamimeguro 3F',
@@ -113,32 +115,24 @@ const localBusinessJsonLd = {
         latitude: 35.6439,
         longitude: 139.6985,
       },
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          opens: '12:00',
-          closes: '21:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Saturday',
-          opens: '11:00',
-          closes: '20:00',
-        },
-      ],
-      priceRange: 'JPY 15000+',
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: 72,
-      },
+      openingHoursSpecification: [{
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: studioInfo.hours.opens,
+        closes: studioInfo.hours.closes,
+      }],
+      priceRange: `JPY ${studioInfo.smallTattooMinimum}+`,
+      hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Tattoo services', itemListElement: [{
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Small Tattoo', description: `Small tattoos from ¥10,000. Deposit: ${studioInfo.deposit}. ${studioInfo.cancellationPolicy}` },
+        priceSpecification: { '@type': 'PriceSpecification', minPrice: studioInfo.smallTattooMinimum, priceCurrency: 'JPY' },
+      }] },
       image: ogImageUrl,
       logo: `${siteUrl}/images/zumbido-logo.png`,
       url: siteUrl,
-      sameAs: ['https://www.instagram.com/zumbidotattoo'],
+      sameAs: [studioInfo.instagramUrl],
       acceptsReservations: true,
-      paymentAccepted: 'Cash, Credit Card, PayPay, LINE Pay',
+      paymentAccepted: studioInfo.paymentMethods,
       currenciesAccepted: 'JPY',
       knowsLanguage: ['en', 'ja'],
     },

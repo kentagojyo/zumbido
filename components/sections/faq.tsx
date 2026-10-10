@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { faqs } from '@/lib/data'
+import { faqs, studioInfo } from '@/lib/data'
 
 export function FAQSection() {
   return (
@@ -70,11 +70,9 @@ export function FAQSection() {
             </a>
             {' '}or email us at{' '}
             <a 
-              href="mailto:info@v0-zombido.vercel.app"
+              href={`mailto:${studioInfo.email}`}
               className="text-primary hover:underline"
-            >
-              info@v0-zombido.vercel.app
-            </a>
+            >{studioInfo.email}</a>
           </p>
         </div>
       </div>

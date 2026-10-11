@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 }
 
 export default function GuestArtistsPage() {
-  const upcomingGuests = guestArtists.filter(g => g.status === 'upcoming')
+  const upcomingGuests = guestArtists.filter(g => g.status === 'current' || g.status === 'upcoming')
   const pastGuests = guestArtists.filter(g => g.status === 'past')
 
   return (
@@ -80,7 +80,7 @@ export default function GuestArtistsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
-                Upcoming Guest Artists
+                Current & Upcoming Guest Artists
               </h2>
               <p className="text-muted-foreground mt-2">
                 Contact us for confirmed dates and availability
@@ -88,30 +88,30 @@ export default function GuestArtistsPage() {
             </div>
 
             {upcomingGuests.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className={`grid grid-cols-1 gap-8 ${upcomingGuests.length > 1 ? 'xl:grid-cols-2' : 'max-w-4xl'}`}>
                 {upcomingGuests.map((guest) => (
                   <article 
                     key={guest.id}
                     className="bg-card border border-border hover:border-primary/30 transition-colors overflow-hidden"
                   >
-                    <div className="grid grid-cols-1 sm:grid-cols-3">
-                      <div className="relative aspect-square sm:aspect-auto bg-secondary overflow-hidden">
+                    <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+                      <div className="relative aspect-[3/4] sm:aspect-auto bg-secondary overflow-hidden">
                         <Image
                           src={guest.profileImage}
                           alt={`${guest.name}, international tattoo guest artist visiting Nakameguro, Tokyo`}
                           fill
-                          sizes="(min-width: 640px) 220px, 100vw"
-                          className="object-cover gritty-image"
+                          sizes="(min-width: 640px) 360px, 100vw"
+                          className={`object-cover gritty-image ${guest.profileImagePosition || ''}`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
                       </div>
 
                       {/* Content */}
-                      <div className="sm:col-span-2 p-6">
+                      <div className="p-6">
                         <div className="flex items-start justify-between gap-4">
                           <div>
                             <span className="px-2 py-1 bg-primary/20 text-primary text-xs uppercase tracking-wider">
-                              Upcoming
+                              {guest.status === 'current' ? 'Now Visiting' : 'Upcoming'}
                             </span>
                             <h3 className="text-xl font-serif font-bold text-foreground mt-3">
                               {guest.name}
@@ -120,10 +120,12 @@ export default function GuestArtistsPage() {
                         </div>
 
                         <div className="space-y-2 mt-4">
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <MapPin className="w-4 h-4 text-primary shrink-0" />
-                            <span>{guest.city}, {guest.country}</span>
-                          </div>
+                          {(guest.city || guest.country) && (
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <MapPin className="w-4 h-4 text-primary shrink-0" />
+                              <span>{[guest.city, guest.country].filter(Boolean).join(', ')}</span>
+                            </div>
+                          )}
                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
                             <Calendar className="w-4 h-4 text-primary shrink-0" />
                             <span>{guest.visitingDates}</span>
@@ -144,7 +146,7 @@ export default function GuestArtistsPage() {
                         </div>
 
                         {guest.bio && (
-                          <p className="text-sm text-muted-foreground mt-4">
+                          <p className="text-sm text-muted-foreground mt-4 whitespace-pre-line">
                             {guest.bio}
                           </p>
                         )}
@@ -222,21 +224,24 @@ export default function GuestArtistsPage() {
                         alt={`${guest.name}, past guest tattoo artist at ZUMBIDO TATTOO Tokyo`}
                         fill
                         sizes="64px"
-                        className="object-cover gritty-image"
+                        className={`object-cover gritty-image ${guest.profileImagePosition || ''}`}
                       />
                     </div>
                     <div>
                       <h3 className="font-serif font-bold text-foreground">
                         {guest.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {guest.city}, {guest.country}
-                      </p>
+                      {(guest.city || guest.country) && (
+                        <p className="text-sm text-muted-foreground">
+                          {[guest.city, guest.country].filter(Boolean).join(', ')}
+                        </p>
+                      )}
                       <p className="text-xs text-muted-foreground/70 mt-1">
                         {guest.visitingDates}
                       </p>
                     </div>
                   </div>
+                  {guest.bio && <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{guest.bio.split('\n')[0]}</p>}
                   <div className="flex flex-wrap gap-1 mt-4">
                     {guest.style.slice(0, 2).map((style) => (
                       <span 
@@ -247,6 +252,7 @@ export default function GuestArtistsPage() {
                       </span>
                     ))}
                   </div>
+                  <Link href={`/guest-artists/${guest.slug}`} className="inline-flex mt-5 text-sm text-primary hover:underline">View Guest Artist</Link>
                 </article>
               ))}
             </div>

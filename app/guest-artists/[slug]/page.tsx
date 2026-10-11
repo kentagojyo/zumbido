@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, Calendar, MapPin } from 'lucide-react'
+import { ArrowLeft, Calendar, MapPin, Instagram } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
-import { guestArtists } from '@/lib/data'
+import { guestArtists, studioInfo } from '@/lib/data'
 import { ogImageUrl, siteUrl } from '@/lib/seo'
 
 interface PageProps {
@@ -87,7 +87,7 @@ export default async function GuestArtistDetailPage({ params }: PageProps) {
                   fill
                   priority
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover [filter:contrast(1.06)_saturate(0.86)_brightness(0.9)]"
+                  className={`object-cover [filter:contrast(1.06)_saturate(0.86)_brightness(0.9)] ${guest.profileImagePosition || ''}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-primary/30" />
@@ -96,25 +96,33 @@ export default async function GuestArtistDetailPage({ params }: PageProps) {
 
               <div className="flex flex-col justify-center">
                 <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4">
-                  Guest Artist
+                  {guest.status === 'past' ? 'Past Guest Artist' : guest.status === 'current' ? 'Now Visiting — Guest Artist' : 'Guest Artist'}
                 </span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6">
                   {guest.name}
                 </h1>
 
                 <div className="space-y-3 text-muted-foreground mb-8">
-                  <p className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-primary" />
-                    <span>{guest.city}, {guest.country}</span>
-                  </p>
+                  {(guest.city || guest.country) && (
+                    <p className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      <span>{[guest.city, guest.country].filter(Boolean).join(', ')}</span>
+                    </p>
+                  )}
                   <p className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-primary" />
                     <span>{guest.visitingDates}</span>
                   </p>
+                  {guest.instagramUrl && guest.instagram && (
+                    <Link href={guest.instagramUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-primary transition-colors">
+                      <Instagram className="w-4 h-4 text-primary" />
+                      {guest.instagram}
+                    </Link>
+                  )}
                 </div>
 
                 {guest.bio && (
-                  <p className="text-muted-foreground leading-relaxed mb-8">
+                  <p className="text-muted-foreground leading-relaxed mb-8 whitespace-pre-line">
                     {guest.bio}
                   </p>
                 )}
@@ -130,12 +138,15 @@ export default async function GuestArtistDetailPage({ params }: PageProps) {
                   ))}
                 </div>
 
-                <Button
-                  asChild
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs w-full sm:w-auto"
-                >
-                  <Link href="/#booking">Booking Information</Link>
-                </Button>
+                <p className="text-muted-foreground mb-4">{guest.status === 'past' ? 'This guest visit has ended. Contact the studio for current guest artist dates and availability.' : 'Hit us up by DM or use our booking form.'}</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider text-xs">
+                    <Link href={studioInfo.instagramUrl} target="_blank" rel="noopener noreferrer">DM on Instagram</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-border hover:bg-secondary uppercase tracking-wider text-xs">
+                    <Link href={guest.status === 'past' ? '/guest-artists' : '/#booking-form'}>{guest.status === 'past' ? 'View Guest Artists' : 'Booking Form'}</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

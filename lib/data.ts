@@ -27,14 +27,15 @@ export interface GuestArtist {
   id: string;
   slug: string;
   name: string;
-  city: string;
-  country: string;
+  city?: string;
+  country?: string;
   style: string[];
   visitingDates: string;
   instagram?: string;
   instagramUrl?: string;
   profileImage: string;
-  status: 'upcoming' | 'past' | 'unconfirmed';
+  profileImagePosition?: string;
+  status: 'current' | 'upcoming' | 'past' | 'unconfirmed';
   bio?: string;
 }
 
@@ -259,6 +260,30 @@ export const artists: Artist[] = [
 ];
 
 export const guestArtists: GuestArtist[] = [
+  {
+    id: 'joe-bell',
+    slug: 'joe-bell',
+    name: 'Joe Bell',
+    style: ['Guest Artist'],
+    visitingDates: 'Visiting through October 15, 2026',
+    instagram: '@joe_bell_tattoo',
+    instagramUrl: 'https://www.instagram.com/joe_bell_tattoo/',
+    profileImage: '/images/artists/joe-bell.webp',
+    profileImagePosition: 'object-[50%_38%]',
+    status: 'current',
+    bio: 'Joe Bell is visiting ZUMBIDO TATTOO in Nakameguro, Tokyo through October 15, 2026.\n\nFor available appointments, contact the studio. Explore his work on Instagram at @joe_bell_tattoo.',
+  },
+  {
+    id: 'widow',
+    slug: 'widow',
+    name: 'Widow',
+    style: ['Guest Artist'],
+    visitingDates: 'Guest visit completed',
+    profileImage: '/images/artists/widow.webp',
+    profileImagePosition: 'object-[50%_70%]',
+    status: 'past',
+    bio: 'Widow is a talented artist creating incredible artwork and unique tattoo designs.\n\nWe were excited to welcome her to our studio in Tokyo.',
+  },
   {
     id: 'kentakenta',
     slug: 'kentakenta',

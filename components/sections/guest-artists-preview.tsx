@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { guestArtists, studioInfo } from '@/lib/data'
 
 export function GuestArtistsPreview() {
-  const upcomingGuests = guestArtists.filter(g => g.status === 'upcoming').slice(0, 2)
+  const upcomingGuests = guestArtists.filter(g => g.status === 'current' || g.status === 'upcoming').slice(0, 2)
 
   return (
     <section className="py-24 md:py-32 bg-card">
@@ -50,7 +50,7 @@ export function GuestArtistsPreview() {
                       fill
                       sizes="(min-width: 768px) 128px, 96px"
                       className={`object-cover [filter:contrast(1.06)_saturate(0.86)_brightness(0.92)] transition duration-700 group-hover:scale-105 ${
-                        index % 2 === 0 ? 'object-[50%_36%]' : 'object-[46%_44%]'
+                        guest.profileImagePosition || (index % 2 === 0 ? 'object-[50%_36%]' : 'object-[46%_44%]')
                       }`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/55 to-transparent" />
@@ -62,14 +62,16 @@ export function GuestArtistsPreview() {
                         {guest.name}
                       </h3>
                       <span className="mt-1 text-[11px] uppercase tracking-[0.24em] text-primary/80">
-                        Upcoming
+                        {guest.status === 'current' ? 'Now Visiting' : 'Upcoming'}
                       </span>
                     </div>
                     
-                    <div className="flex items-center gap-2 mt-4 text-sm text-muted-foreground">
-                      <MapPin className="w-4 h-4 text-primary" />
-                      <span>{guest.city}, {guest.country}</span>
-                    </div>
+                    {(guest.city || guest.country) && (
+                      <div className="flex items-center gap-2 mt-4 text-sm text-muted-foreground">
+                        <MapPin className="w-4 h-4 text-primary shrink-0" />
+                        <span>{[guest.city, guest.country].filter(Boolean).join(', ')}</span>
+                      </div>
+                    )}
 
                     <div className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
                       <Calendar className="w-4 h-4 text-primary" />
@@ -89,7 +91,9 @@ export function GuestArtistsPreview() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/60">
+                {guest.bio && <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{guest.bio.split('\n')[0]}</p>}
+
+                <div className="flex flex-wrap items-center justify-between gap-4 mt-8 pt-6 border-t border-border/60">
                   {guest.instagramUrl && guest.instagram ? (
                     <Link
                       href={guest.instagramUrl}

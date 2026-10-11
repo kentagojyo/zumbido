@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import Link from 'next/link'
-import { artists, studioInfo } from '@/lib/data'
+import { artists, guestArtists, studioInfo } from '@/lib/data'
 import { todayInTokyo, validateReferenceImages } from '@/lib/booking-validation'
 import { Button } from '@/components/ui/button'
 
@@ -44,7 +44,7 @@ export function BookingForm({ returnUrl, preferredArtist = '' }: { returnUrl: st
         <label className="block min-w-0 text-sm" htmlFor="booking-name">Name *<input id="booking-name" className={inputClass} name="name" autoComplete="name" required maxLength={100} /></label>
         <label className="block min-w-0 text-sm" htmlFor="booking-email">Email *<input id="booking-email" className={inputClass} name="email" type="email" autoComplete="email" required maxLength={254} /></label>
         <label className="block min-w-0 text-sm" htmlFor="booking-instagram">Instagram<input id="booking-instagram" className={inputClass} name="Instagram" placeholder="@yourhandle (optional)" maxLength={100} /></label>
-        <label className="block min-w-0 text-sm" htmlFor="booking-artist">Preferred Artist<select id="booking-artist" className={inputClass} name="Preferred Artist" defaultValue={preferredArtist}><option value="">No preference / Please advise</option>{artists.filter(artist => artist.isResident).map(artist => <option key={artist.slug} value={artist.name}>{artist.name}</option>)}</select></label>
+        <label className="block min-w-0 text-sm" htmlFor="booking-artist">Preferred Artist<select id="booking-artist" className={inputClass} name="Preferred Artist" defaultValue={preferredArtist}><option value="">No preference / Please advise</option>{artists.filter(artist => artist.isResident).map(artist => <option key={artist.slug} value={artist.name}>{artist.name}</option>)}{guestArtists.filter(artist => artist.status === 'current' || artist.status === 'upcoming').map(artist => <option key={`guest-${artist.slug}`} value={artist.name}>{artist.name} (Guest Artist)</option>)}</select></label>
       </div>
       <label className="block text-sm" htmlFor="booking-idea">Tattoo Idea *<textarea id="booking-idea" className={inputClass} name="Tattoo Idea" rows={4} required maxLength={4000} placeholder="Describe your idea and preferred style." /></label>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

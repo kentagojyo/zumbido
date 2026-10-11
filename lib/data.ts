@@ -212,8 +212,8 @@ export const artists: Artist[] = [
     instagram: '@echo_tatt',
     instagramUrl: 'https://www.instagram.com/echo_tatt/',
     instagramProfileUrl: 'https://www.instagram.com/echo_tatt/',
-    profileImage: '/images/artists/echo.png',
-    profileImagePosition: 'object-[50%_34%]',
+    profileImage: '/images/artists/echo-cherry-blossoms.webp',
+    profileImagePosition: 'object-[33%_50%]',
     profileImageTone: '[filter:contrast(1.06)_saturate(0.76)_brightness(0.82)] group-hover:[filter:contrast(1.08)_saturate(0.82)_brightness(0.9)]',
     portfolioImages: [
 

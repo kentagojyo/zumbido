@@ -144,9 +144,9 @@ export const artists: Artist[] = [
     instagram: '@gentaro_tattoo',
     instagramUrl: 'https://www.instagram.com/gentaro_tattoo/',
     instagramProfileUrl: 'https://www.instagram.com/gentaro_tattoo/',
-    profileImage: '/images/artists/gentaro.png',
-    profileImagePosition: 'object-[54%_48%]',
-    profileImageTone: '[filter:grayscale(1)_contrast(1.14)_brightness(0.78)] group-hover:[filter:grayscale(0.85)_contrast(1.16)_brightness(0.86)]',
+    profileImage: '/images/artists/gentaro-portrait.webp',
+    profileImagePosition: 'object-[50%_38%]',
+    profileImageTone: '[filter:contrast(1.06)_saturate(0.9)_brightness(0.9)] group-hover:[filter:contrast(1.08)_saturate(0.96)_brightness(0.96)]',
     portfolioImages: [
       '/images/portfolio/gen/work-01.jpg',
       '/images/portfolio/gen/work-02.jpg',
